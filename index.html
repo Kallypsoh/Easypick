@@ -1,1 +1,2610 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyPick &amp; Deliveries - We Deliver Speed, Trust &amp; Style</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            box-sizing: border-box;
+            letter-spacing: -0.01em;
+        }
+        
+        .font-display { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        
+        .gradient-primary {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+        
+        .gradient-accent {
+            background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+        }
+        
+        .gradient-fintech {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        }
+        
+        .gradient-success {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        }
+        
+        .gradient-warning {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .glass-dark {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .shadow-elegant {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .shadow-premium {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .animate-slideUp {
+            animation: slideUp 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(32px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        .hidden { display: none !important; }
+        .show { display: block !important; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #003366; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #002244; }
+        
+        /* Professional Card Styles */
+        .fintech-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+        }
+        
+        .metric-card {
+            background: white;
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08), 0 3px 10px rgba(0, 0, 0, 0.06);
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 24px;
+            padding: 36px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Enhanced image styles */
+        .hero-image {
+            background: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+        }
+        
+        .register-bg {
+            background: url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+        }
+        
+        .admin-bg {
+            background: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+        }
+        
+        .driver-bg {
+            background: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+        }
+        
+        .delivery-bg {
+            background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+        }
+        
+        .fintech-bg {
+            background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+        }
+        
+        /* Panel-specific hero backgrounds */
+        .home-hero {
+            background: linear-gradient(135deg, rgba(26,26,26,0.95), rgba(45,45,45,0.9)), 
+                        url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+        }
+        
+        .driver-hero {
+            background: linear-gradient(135deg, rgba(5,150,105,0.95), rgba(16,185,129,0.9)), 
+                        url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+        }
+        
+        .admin-hero {
+            background: linear-gradient(135deg, rgba(99,102,241,0.95), rgba(139,92,246,0.9)), 
+                        url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+        }
+        
+        .booking-hero {
+            background: linear-gradient(135deg, rgba(245,158,11,0.95), rgba(249,115,22,0.9)), 
+                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+        }
+        
+        .profile-hero {
+            background: linear-gradient(135deg, rgba(99,102,241,0.95), rgba(139,92,246,0.9)), 
+                        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+        }
+        
+        /* Enhanced card styles */
+        .premium-card {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+        
+        .neo-card {
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.08),
+                0 2px 8px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+        
+        .gradient-card {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.2);
+        }
+        
+        .gradient-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            pointer-events: none;
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="bg-gray-50 min-h-screen"><!-- Navigation -->
+  <nav id="navbar" class="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 hidden">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16"><!-- Logo -->
+     <div class="flex items-center space-x-3 cursor-pointer" onclick="showPage('home')">
+      <div class="w-10 h-10 gradient-primary rounded-xl flex items-center justify-center shadow-elegant"><i data-lucide="package" class="text-orange-400 w-6 h-6"></i>
+      </div>
+      <div>
+       <h1 class="text-xl font-display font-bold text-gray-900">EasyPick</h1>
+       <p class="text-xs text-gray-500 font-medium">Professional Delivery</p>
+      </div>
+     </div><!-- Desktop Navigation -->
+     <div class="hidden md:flex items-center space-x-2"><button onclick="showPage('home')" class="nav-link flex items-center space-x-2 px-4 py-2 rounded-xl transition-all text-gray-600 hover:bg-gray-50 hover:text-gray-900 font-medium"> <i data-lucide="home" class="w-4 h-4"></i> <span>Home</span> </button> <button onclick="showPage('booking')" class="nav-link flex items-center space-x-2 px-4 py-2 rounded-xl transition-all text-gray-600 hover:bg-gray-50 hover:text-gray-900 font-medium"> <i data-lucide="package" class="w-4 h-4"></i> <span>Book Now</span> </button> <button onclick="showPage('profile')" class="nav-link flex items-center space-x-2 px-4 py-2 rounded-xl transition-all text-gray-600 hover:bg-gray-50 hover:text-gray-900 font-medium"> <i data-lucide="user" class="w-4 h-4"></i> <span>Profile</span> </button> <button id="admin-nav" onclick="showPage('admin')" class="nav-link flex items-center space-x-2 px-4 py-2 rounded-xl transition-all text-gray-600 hover:bg-gray-50 hover:text-gray-900 font-medium hidden"> <i data-lucide="layout-dashboard" class="w-4 h-4"></i> <span>Admin</span> </button> <button id="driver-nav" onclick="showPage('driver')" class="nav-link flex items-center space-x-2 px-4 py-2 rounded-xl transition-all text-gray-600 hover:bg-gray-50 hover:text-gray-900 font-medium hidden"> <i data-lucide="truck" class="w-4 h-4"></i> <span>Driver</span> </button> <!-- Wallet Balance -->
+      <div class="flex items-center space-x-2 px-4 py-2 bg-orange-50 rounded-xl border border-orange-100"><i data-lucide="wallet" class="w-4 h-4 text-orange-600"></i> <span id="wallet-balance" class="font-semibold text-gray-900">KSh 0</span>
+      </div><!-- User Menu -->
+      <div class="flex items-center space-x-3"><img id="nav-avatar" src="https://ui-avatars.com/api/?name=User&amp;background=1a1a1a&amp;color=f59e0b" alt="User" class="w-10 h-10 rounded-full border-2 border-orange-200 shadow-elegant"> <button onclick="logout()" class="flex items-center space-x-2 px-4 py-2 bg-gray-50 text-gray-700 rounded-xl hover:bg-gray-100 transition-colors font-medium"> <i data-lucide="log-out" class="w-4 h-4"></i> <span>Logout</span> </button>
+      </div>
+     </div><!-- Mobile Menu Button --> <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100"> <i data-lucide="menu" class="w-6 h-6"></i> </button>
+    </div>
+   </div><!-- Mobile Menu -->
+   <div id="mobile-menu" class="md:hidden bg-white border-t hidden">
+    <div class="px-4 py-4 space-y-3"><button onclick="showPage('home')" class="mobile-nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100"> <i data-lucide="home" class="w-5 h-5"></i> <span class="font-medium">Home</span> </button> <button onclick="showPage('booking')" class="mobile-nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100"> <i data-lucide="package" class="w-5 h-5"></i> <span class="font-medium">Book Now</span> </button> <button onclick="showPage('profile')" class="mobile-nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100"> <i data-lucide="user" class="w-5 h-5"></i> <span class="font-medium">Profile</span> </button> <button id="mobile-admin-nav" onclick="showPage('admin')" class="mobile-nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 hidden"> <i data-lucide="layout-dashboard" class="w-5 h-5"></i> <span class="font-medium">Admin</span> </button> <button id="mobile-driver-nav" onclick="showPage('driver')" class="mobile-nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 hidden"> <i data-lucide="truck" class="w-5 h-5"></i> <span class="font-medium">Driver</span> </button>
+     <div class="flex items-center justify-between px-4 py-3 bg-yellow-50 rounded-lg">
+      <div class="flex items-center space-x-2"><i data-lucide="wallet" class="w-5 h-5 text-blue-900"></i> <span class="font-medium text-gray-700">Wallet</span>
+      </div><span id="mobile-wallet-balance" class="font-bold text-blue-900">KSh 0</span>
+     </div><button onclick="logout()" class="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-red-50 text-red-600 rounded-lg hover:bg-red-100"> <i data-lucide="log-out" class="w-5 h-5"></i> <span class="font-medium">Logout</span> </button>
+    </div>
+   </div>
+  </nav><!-- Toast Container -->
+  <div id="toast-container" class="fixed top-4 right-4 z-50 space-y-2"></div><!-- Login Page -->
+  <div id="login-page" class="min-h-screen flex items-center justify-center px-4 py-12 hero-image relative">
+   <div class="absolute inset-0 bg-gradient-to-br from-gray-900/95 to-gray-800/95"></div>
+   <div class="max-w-lg w-full animate-fadeIn relative z-10"><!-- Logo & Header -->
+    <div class="text-center mb-12">
+     <div class="inline-flex items-center justify-center w-24 h-24 gradient-accent rounded-2xl mb-8 shadow-premium animate-float"><i data-lucide="package" class="w-12 h-12 text-white"></i>
+     </div>
+     <h1 class="text-5xl font-display font-black text-white mb-4 tracking-tight">Welcome Back</h1>
+     <p class="text-orange-300 text-xl font-semibold mb-2">EasyPick Delivery</p>
+     <p class="text-white/70 text-base font-medium">Professional • Reliable • Fast</p>
+     <div class="flex items-center justify-center space-x-2 mt-6">
+      <div class="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
+      <div class="w-2 h-2 bg-orange-500 rounded-full animate-pulse" style="animation-delay: 0.3s"></div>
+      <div class="w-2 h-2 bg-orange-600 rounded-full animate-pulse" style="animation-delay: 0.6s"></div>
+     </div>
+    </div><!-- Login Form -->
+    <div class="premium-card rounded-3xl p-10 animate-slideUp">
+     <div class="text-center mb-8">
+      <h2 class="text-2xl font-display font-bold text-gray-900 mb-2">Sign In to Your Account</h2>
+      <p class="text-gray-600 font-medium">Enter your credentials to access your dashboard</p>
+     </div>
+     <form id="login-form" class="space-y-6"><!-- Email Input -->
+      <div><label class="block text-sm font-semibold text-gray-800 mb-3">Email Address</label>
+       <div class="relative"><i data-lucide="mail" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"></i> <input type="email" id="login-email" required class="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all bg-white font-medium text-base shadow-elegant" placeholder="Enter your email">
+       </div>
+      </div><!-- Password Input -->
+      <div><label class="block text-sm font-semibold text-gray-800 mb-3">Password</label>
+       <div class="relative"><i data-lucide="lock" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"></i> <input type="password" id="login-password" required class="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all bg-white font-medium text-base shadow-elegant" placeholder="Enter your password">
+       </div>
+      </div><!-- Submit Button --> <button type="submit" class="w-full gradient-primary text-white py-4 rounded-xl font-semibold text-lg flex items-center justify-center space-x-3 hover:shadow-premium transition-all transform hover:scale-[1.02]"> <span>Access Dashboard</span> <i data-lucide="arrow-right" class="w-5 h-5"></i> </button>
+     </form><!-- Demo Credentials -->
+     <div class="mt-10 p-8 bg-gradient-to-r from-gray-50 to-orange-50 rounded-2xl border border-gray-200">
+      <div class="flex items-center space-x-3 mb-6">
+       <div class="w-10 h-10 gradient-accent rounded-xl flex items-center justify-center shadow-elegant"><i data-lucide="info" class="w-5 h-5 text-white"></i>
+       </div>
+       <p class="text-lg font-display font-bold text-gray-900">Demo Accounts</p>
+      </div>
+      <div class="space-y-3">
+       <div class="flex items-center justify-between p-4 bg-white rounded-xl shadow-elegant border border-gray-100">
+        <div><span class="text-sm font-semibold text-gray-800">👤 Regular User</span>
+         <p class="text-xs text-gray-600 font-medium">Full customer experience</p>
+        </div>
+        <div class="text-right">
+         <p class="text-sm font-bold text-gray-900">john@example.com</p>
+         <p class="text-xs text-gray-600 font-medium">password123</p>
+        </div>
+       </div>
+       <div class="flex items-center justify-between p-4 bg-white rounded-xl shadow-elegant border border-gray-100">
+        <div><span class="text-sm font-semibold text-gray-800">👑 Admin Panel</span>
+         <p class="text-xs text-gray-600 font-medium">Full platform management</p>
+        </div>
+        <div class="text-right">
+         <p class="text-sm font-bold text-gray-900">admin@easypick.com</p>
+         <p class="text-xs text-gray-600 font-medium">admin123</p>
+        </div>
+       </div>
+       <div class="flex items-center justify-between p-4 bg-white rounded-xl shadow-elegant border border-gray-100">
+        <div><span class="text-sm font-semibold text-gray-800">🚛 Driver Dashboard</span>
+         <p class="text-xs text-gray-600 font-medium">Driver management tools</p>
+        </div>
+        <div class="text-right">
+         <p class="text-sm font-bold text-gray-900">mike@easypick.com</p>
+         <p class="text-xs text-gray-600 font-medium">driver123</p>
+        </div>
+       </div>
+      </div>
+     </div><!-- Register Link -->
+     <div class="mt-10 text-center">
+      <div class="flex items-center justify-center space-x-4 mb-6">
+       <div class="h-px bg-gray-200 flex-1"></div><span class="text-gray-500 font-medium">New to EasyPick?</span>
+       <div class="h-px bg-gray-200 flex-1"></div>
+      </div><button onclick="showPage('register')" class="w-full gradient-success text-white py-4 rounded-xl font-semibold text-lg hover:shadow-premium transition-all transform hover:scale-[1.02]"> Create New Account </button>
+     </div>
+    </div>
+   </div>
+  </div><!-- Register Page -->
+  <div id="register-page" class="min-h-screen flex items-center justify-center px-4 py-12 register-bg relative hidden">
+   <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/95 to-teal-900/95"></div>
+   <div class="max-w-lg w-full animate-fadeIn relative z-10"><!-- Logo & Header -->
+    <div class="text-center mb-10">
+     <div class="inline-flex items-center justify-center w-28 h-28 bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-500 rounded-full mb-8 shadow-2xl animate-float"><i data-lucide="user-plus" class="w-14 h-14 text-white"></i>
+     </div>
+     <h1 class="text-6xl font-display font-black text-white mb-4 tracking-tight">Join EasyPick</h1>
+     <p class="text-emerald-300 text-2xl font-semibold mb-2">Start Your Journey</p>
+     <p class="text-white/80 text-lg">Fast • Reliable • Secure</p>
+     <div class="flex items-center justify-center space-x-3 mt-6">
+      <div class="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
+      <div class="w-3 h-3 bg-teal-400 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
+      <div class="w-3 h-3 bg-cyan-400 rounded-full animate-pulse" style="animation-delay: 0.4s"></div>
+     </div>
+    </div><!-- Register Form -->
+    <div class="premium-card rounded-3xl shadow-2xl p-10 animate-slideUp">
+     <div class="text-center mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-2">Create Your Account</h2>
+      <p class="text-gray-600">Join thousands of satisfied customers</p>
+     </div>
+     <form id="register-form" class="space-y-6"><!-- Name Input -->
+      <div><label class="block text-sm font-bold text-gray-800 mb-3">Full Name</label>
+       <div class="relative"><i data-lucide="user" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-6 h-6"></i> <input type="text" id="register-name" required class="w-full pl-14 pr-4 py-5 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all bg-gray-50 font-medium text-lg" placeholder="Enter your full name">
+       </div>
+      </div><!-- Email Input -->
+      <div><label class="block text-sm font-bold text-gray-800 mb-3">Email Address</label>
+       <div class="relative"><i data-lucide="mail" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-6 h-6"></i> <input type="email" id="register-email" required class="w-full pl-14 pr-4 py-5 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all bg-gray-50 font-medium text-lg" placeholder="Enter your email">
+       </div>
+      </div><!-- Phone Input -->
+      <div><label class="block text-sm font-bold text-gray-800 mb-3">Phone Number</label>
+       <div class="relative"><i data-lucide="phone" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-6 h-6"></i> <input type="tel" id="register-phone" required class="w-full pl-14 pr-4 py-5 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all bg-gray-50 font-medium text-lg" placeholder="+254712345678">
+       </div>
+      </div><!-- Password Input -->
+      <div><label class="block text-sm font-bold text-gray-800 mb-3">Password</label>
+       <div class="relative"><i data-lucide="lock" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-6 h-6"></i> <input type="password" id="register-password" required class="w-full pl-14 pr-4 py-5 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all bg-gray-50 font-medium text-lg" placeholder="Create a strong password">
+       </div>
+      </div><!-- Account Type Selection -->
+      <div><label class="block text-sm font-bold text-gray-800 mb-3">Account Type</label>
+       <div class="grid grid-cols-2 gap-4"><label class="account-type-option cursor-pointer"> <input type="radio" name="accountType" value="user" class="hidden" checked>
+         <div class="border-2 border-emerald-500 bg-emerald-50 rounded-2xl p-4 text-center transition-all"><i data-lucide="user" class="w-8 h-8 mx-auto mb-2 text-emerald-600"></i>
+          <h4 class="font-bold text-gray-900">Customer</h4>
+          <p class="text-xs text-gray-600">Book deliveries</p>
+         </div></label> <label class="account-type-option cursor-pointer"> <input type="radio" name="accountType" value="driver" class="hidden">
+         <div class="border-2 border-gray-200 rounded-2xl p-4 text-center hover:border-emerald-500 hover:bg-emerald-50 transition-all"><i data-lucide="truck" class="w-8 h-8 mx-auto mb-2 text-gray-500"></i>
+          <h4 class="font-bold text-gray-900">Driver</h4>
+          <p class="text-xs text-gray-600">Deliver packages</p>
+         </div></label>
+       </div>
+      </div><!-- Referral Code Input -->
+      <div><label class="block text-sm font-bold text-gray-800 mb-3">Referral Code (Optional)</label>
+       <div class="relative"><i data-lucide="gift" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-6 h-6"></i> <input type="text" id="register-referral" class="w-full pl-14 pr-4 py-5 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all bg-gray-50 font-medium text-lg" placeholder="Enter referral code">
+       </div>
+      </div><!-- Submit Button --> <button type="submit" class="w-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white py-5 rounded-2xl font-bold text-xl flex items-center justify-center space-x-3 hover:shadow-2xl transition-all transform hover:scale-105 hover:-translate-y-1"> <span>Create Account</span> <i data-lucide="arrow-right" class="w-6 h-6"></i> </button>
+     </form><!-- Benefits -->
+     <div class="mt-8 p-6 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-200">
+      <h4 class="font-bold text-emerald-900 mb-4 text-center">🎉 Welcome Benefits</h4>
+      <div class="space-y-2">
+       <div class="flex items-center space-x-3"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-600"></i> <span class="text-sm text-gray-700">KSh 50 welcome bonus</span>
+       </div>
+       <div class="flex items-center space-x-3"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-600"></i> <span class="text-sm text-gray-700">Free first delivery (up to KSh 100)</span>
+       </div>
+       <div class="flex items-center space-x-3"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-600"></i> <span class="text-sm text-gray-700">24/7 customer support</span>
+       </div>
+      </div>
+     </div><!-- Login Link -->
+     <div class="mt-8 text-center">
+      <div class="flex items-center justify-center space-x-4 mb-4">
+       <div class="h-px bg-gray-300 flex-1"></div><span class="text-gray-500 font-medium">Already have an account?</span>
+       <div class="h-px bg-gray-300 flex-1"></div>
+      </div><button onclick="showPage('login')" class="text-emerald-600 font-bold hover:text-emerald-800 transition-colors text-lg"> Sign In Instead → </button>
+     </div>
+    </div>
+   </div>
+  </div><!-- Home Page -->
+  <div id="home-page" class="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 hidden"><!-- Hero Section -->
+   <div class="home-hero py-16 mb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center text-white animate-fadeIn">
+      <div class="relative inline-block mb-6"><img id="home-hero-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=150&amp;q=80" alt="User" class="w-24 h-24 rounded-full border-4 border-white shadow-2xl mx-auto">
+       <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center"><i data-lucide="check" class="w-4 h-4 text-white"></i>
+       </div>
+      </div>
+      <h1 id="home-hero-greeting" class="text-5xl font-display font-black mb-4">Good Morning, User! 👋</h1>
+      <p class="text-xl text-white/90 mb-8">Ready to make your next delivery?</p>
+      <div class="flex items-center justify-center space-x-8 text-white/80">
+       <div class="flex items-center space-x-2">
+        <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div><span class="font-medium">Online &amp; Ready</span>
+       </div>
+       <div class="flex items-center space-x-2"><i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i> <span class="font-medium">4.9 Rating</span>
+       </div>
+       <div class="flex items-center space-x-2"><i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i> <span class="font-medium">Fast Delivery</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8"><!-- Quick Stats Cards -->
+    <div class="mb-8 animate-fadeIn">
+     <div class="flex items-center justify-center space-x-4 flex-wrap gap-4"><!-- Wallet Card -->
+      <div class="fintech-card px-6 py-4 rounded-2xl">
+       <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 gradient-success rounded-xl flex items-center justify-center"><i data-lucide="wallet" class="w-6 h-6 text-white"></i>
+        </div>
+        <div>
+         <p class="text-xs text-gray-600 font-medium">Wallet Balance</p>
+         <p id="home-wallet" class="text-2xl font-bold text-gray-900">KSh 0</p>
+        </div>
+       </div>
+      </div><!-- Referral Card -->
+      <div class="fintech-card px-6 py-4 rounded-2xl">
+       <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 gradient-warning rounded-xl flex items-center justify-center"><i data-lucide="gift" class="w-6 h-6 text-white"></i>
+        </div>
+        <div>
+         <p class="text-xs text-gray-600 font-medium">Referral Code</p>
+         <p id="home-referral" class="text-lg font-bold text-gray-900">EP12345678</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div><!-- Stats Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+     <div class="metric-card animate-slideUp">
+      <div class="flex items-center justify-between mb-4">
+       <div class="w-14 h-14 gradient-primary rounded-2xl flex items-center justify-center"><i data-lucide="package" class="text-white w-7 h-7"></i>
+       </div>
+       <div class="text-right">
+        <div class="flex items-center space-x-1 text-green-600"><i data-lucide="trending-up" class="w-4 h-4"></i> <span class="text-sm font-medium">+12%</span>
+        </div>
+       </div>
+      </div>
+      <div>
+       <p class="text-gray-600 text-sm font-medium mb-1">Total Bookings</p>
+       <p id="stats-total" class="text-3xl font-bold text-gray-900">0</p>
+       <p class="text-xs text-gray-500 mt-1">This month</p>
+      </div>
+     </div>
+     <div class="metric-card animate-slideUp" style="animation-delay: 0.1s">
+      <div class="flex items-center justify-between mb-4">
+       <div class="w-14 h-14 gradient-fintech rounded-2xl flex items-center justify-center"><i data-lucide="zap" class="text-white w-7 h-7"></i>
+       </div>
+       <div class="text-right">
+        <div class="flex items-center space-x-1 text-purple-600"><i data-lucide="activity" class="w-4 h-4"></i> <span class="text-sm font-medium">Live</span>
+        </div>
+       </div>
+      </div>
+      <div>
+       <p class="text-gray-600 text-sm font-medium mb-1">Active Deliveries</p>
+       <p id="stats-active" class="text-3xl font-bold text-gray-900">0</p>
+       <p class="text-xs text-gray-500 mt-1">In progress</p>
+      </div>
+     </div>
+     <div class="metric-card animate-slideUp" style="animation-delay: 0.2s">
+      <div class="flex items-center justify-between mb-4">
+       <div class="w-14 h-14 gradient-success rounded-2xl flex items-center justify-center"><i data-lucide="check-circle" class="text-white w-7 h-7"></i>
+       </div>
+       <div class="text-right">
+        <div class="flex items-center space-x-1 text-green-600"><i data-lucide="trending-up" class="w-4 h-4"></i> <span class="text-sm font-medium">+8%</span>
+        </div>
+       </div>
+      </div>
+      <div>
+       <p class="text-gray-600 text-sm font-medium mb-1">Completed</p>
+       <p id="stats-completed" class="text-3xl font-bold text-gray-900">0</p>
+       <p class="text-xs text-gray-500 mt-1">Success rate: 98%</p>
+      </div>
+     </div>
+     <div class="metric-card animate-slideUp" style="animation-delay: 0.3s">
+      <div class="flex items-center justify-between mb-4">
+       <div class="w-14 h-14 gradient-warning rounded-2xl flex items-center justify-center"><i data-lucide="dollar-sign" class="text-white w-7 h-7"></i>
+       </div>
+       <div class="text-right">
+        <div class="flex items-center space-x-1 text-green-600"><i data-lucide="trending-up" class="w-4 h-4"></i> <span class="text-sm font-medium">+15%</span>
+        </div>
+       </div>
+      </div>
+      <div>
+       <p class="text-gray-600 text-sm font-medium mb-1">Total Spent</p>
+       <p id="stats-spent" class="text-3xl font-bold text-gray-900">KSh 0</p>
+       <p class="text-xs text-gray-500 mt-1">Lifetime</p>
+      </div>
+     </div>
+    </div><!-- Quick Actions -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8"><!-- Main Actions -->
+     <div class="lg:col-span-2">
+      <div class="flex items-center justify-between mb-6">
+       <h2 class="text-2xl font-display font-bold text-gray-900">Quick Actions</h2><button class="text-purple-600 hover:text-purple-800 font-medium text-sm">View All →</button>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+       <div onclick="showBookingPage('goods')" class="group cursor-pointer">
+        <div class="relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
+         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80');"></div>
+         <div class="absolute inset-0 bg-gradient-to-br from-blue-600/70 to-purple-700/70 backdrop-blur-[2px]"></div>
+         <div class="relative p-8 text-white">
+          <div class="w-16 h-16 bg-white/25 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-md border border-white/20"><i data-lucide="package" class="w-8 h-8"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Send Package</h3>
+          <p class="text-white/95 mb-4">Ship goods safely &amp; securely</p>
+          <div class="flex items-center space-x-2 text-sm"><span class="bg-white/25 px-3 py-1 rounded-full backdrop-blur-sm">From KSh 50</span> <span class="bg-white/25 px-3 py-1 rounded-full backdrop-blur-sm">2-4 hrs</span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div onclick="showBookingPage('person')" class="group cursor-pointer">
+        <div class="relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
+         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80');"></div>
+         <div class="absolute inset-0 bg-gradient-to-br from-purple-600/70 to-pink-700/70 backdrop-blur-[2px]"></div>
+         <div class="relative p-8 text-white">
+          <div class="w-16 h-16 bg-white/25 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-md border border-white/20"><i data-lucide="car" class="w-8 h-8"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Book Ride</h3>
+          <p class="text-white/95 mb-4">Personal transport service</p>
+          <div class="flex items-center space-x-2 text-sm"><span class="bg-white/25 px-3 py-1 rounded-full backdrop-blur-sm">From KSh 100</span> <span class="bg-white/25 px-3 py-1 rounded-full backdrop-blur-sm">15 mins</span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div onclick="showBookingPage('gift')" class="group cursor-pointer">
+        <div class="relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
+         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80');"></div>
+         <div class="absolute inset-0 bg-gradient-to-br from-pink-600/70 to-red-700/70 backdrop-blur-[2px]"></div>
+         <div class="relative p-8 text-white">
+          <div class="w-16 h-16 bg-white/25 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-md border border-white/20"><i data-lucide="gift" class="w-8 h-8"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Gift Delivery</h3>
+          <p class="text-white/95 mb-4">Surprise someone special</p>
+          <div class="flex items-center space-x-2 text-sm"><span class="bg-white/25 px-3 py-1 rounded-full backdrop-blur-sm">From KSh 75</span> <span class="bg-white/25 px-3 py-1 rounded-full backdrop-blur-sm">1-3 hrs</span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div onclick="showPage('profile')" class="group cursor-pointer">
+        <div class="relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
+         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80');"></div>
+         <div class="absolute inset-0 bg-gradient-to-br from-green-600/70 to-teal-700/70 backdrop-blur-[2px]"></div>
+         <div class="relative p-8 text-white">
+          <div class="w-16 h-16 bg-white/25 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-md border border-white/20"><i data-lucide="credit-card" class="w-8 h-8"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-2">Top Up Wallet</h3>
+          <p class="text-white/95 mb-4">Add funds to your account</p>
+          <div class="flex items-center space-x-2 text-sm"><span class="bg-white/25 px-3 py-1 rounded-full backdrop-blur-sm">Instant</span> <span class="bg-white/25 px-3 py-1 rounded-full backdrop-blur-sm">Secure</span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div><!-- Analytics Panel -->
+     <div class="lg:col-span-1">
+      <div class="chart-container">
+       <div class="flex items-center justify-between mb-6">
+        <h3 class="text-xl font-bold text-gray-900">Analytics</h3><select class="text-sm border border-gray-200 rounded-lg px-3 py-1"> <option>This Week</option> <option>This Month</option> <option>This Year</option> </select>
+       </div><!-- Mini Chart -->
+       <div class="mb-6">
+        <div class="flex items-end justify-between h-32 space-x-2">
+         <div class="flex flex-col items-center space-y-2">
+          <div class="w-6 bg-gradient-to-t from-blue-500 to-blue-300 rounded-t" style="height: 60%"></div><span class="text-xs text-gray-500">Mon</span>
+         </div>
+         <div class="flex flex-col items-center space-y-2">
+          <div class="w-6 bg-gradient-to-t from-purple-500 to-purple-300 rounded-t" style="height: 80%"></div><span class="text-xs text-gray-500">Tue</span>
+         </div>
+         <div class="flex flex-col items-center space-y-2">
+          <div class="w-6 bg-gradient-to-t from-pink-500 to-pink-300 rounded-t" style="height: 45%"></div><span class="text-xs text-gray-500">Wed</span>
+         </div>
+         <div class="flex flex-col items-center space-y-2">
+          <div class="w-6 bg-gradient-to-t from-green-500 to-green-300 rounded-t" style="height: 90%"></div><span class="text-xs text-gray-500">Thu</span>
+         </div>
+         <div class="flex flex-col items-center space-y-2">
+          <div class="w-6 bg-gradient-to-t from-yellow-500 to-yellow-300 rounded-t" style="height: 70%"></div><span class="text-xs text-gray-500">Fri</span>
+         </div>
+         <div class="flex flex-col items-center space-y-2">
+          <div class="w-6 bg-gradient-to-t from-indigo-500 to-indigo-300 rounded-t" style="height: 55%"></div><span class="text-xs text-gray-500">Sat</span>
+         </div>
+         <div class="flex flex-col items-center space-y-2">
+          <div class="w-6 bg-gradient-to-t from-red-500 to-red-300 rounded-t" style="height: 35%"></div><span class="text-xs text-gray-500">Sun</span>
+         </div>
+        </div>
+       </div><!-- Quick Stats -->
+       <div class="space-y-4">
+        <div class="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl">
+         <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center"><i data-lucide="clock" class="w-5 h-5 text-blue-600"></i>
+          </div>
+          <div>
+           <p class="text-sm font-medium text-gray-700">Avg. Delivery Time</p>
+           <p class="text-lg font-bold text-gray-900">2.5 hrs</p>
+          </div>
+         </div>
+        </div>
+        <div class="flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-teal-50 rounded-xl">
+         <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center"><i data-lucide="target" class="w-5 h-5 text-green-600"></i>
+          </div>
+          <div>
+           <p class="text-sm font-medium text-gray-700">Success Rate</p>
+           <p class="text-lg font-bold text-gray-900">98.5%</p>
+          </div>
+         </div>
+        </div>
+        <div class="flex items-center justify-between p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl">
+         <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center"><i data-lucide="star" class="w-5 h-5 text-purple-600"></i>
+          </div>
+          <div>
+           <p class="text-sm font-medium text-gray-700">Customer Rating</p>
+           <p class="text-lg font-bold text-gray-900">4.9/5</p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div><!-- Recent Bookings -->
+    <div class="animate-fadeIn">
+     <div class="flex items-center justify-between mb-4">
+      <h2 class="text-2xl font-display font-bold text-blue-900">Recent Bookings</h2><button onclick="showPage('profile')" class="text-blue-900 hover:text-blue-700 font-medium">View All →</button>
+     </div>
+     <div id="recent-bookings" class="space-y-4"><!-- Recent bookings will be populated here -->
+     </div>
+    </div>
+   </div>
+  </div><!-- Booking Page -->
+  <div id="booking-page" class="min-h-screen bg-gray-50 hidden"><!-- Hero Section -->
+   <div class="booking-hero py-16 mb-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center text-white animate-fadeIn">
+      <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm"><i data-lucide="package" class="w-10 h-10 text-white"></i>
+      </div>
+      <h1 class="text-5xl font-display font-black mb-4">Book Your Delivery</h1>
+      <p class="text-xl text-white/90 mb-8">Fast, reliable, and secure delivery service</p>
+      <div class="flex items-center justify-center space-x-8 text-white/80">
+       <div class="flex items-center space-x-2"><i data-lucide="clock" class="w-5 h-5"></i> <span class="font-medium">2-4 Hours</span>
+       </div>
+       <div class="flex items-center space-x-2"><i data-lucide="shield-check" class="w-5 h-5"></i> <span class="font-medium">Insured</span>
+       </div>
+       <div class="flex items-center space-x-2"><i data-lucide="map-pin" class="w-5 h-5"></i> <span class="font-medium">Real-time Tracking</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+    <div class="bg-white rounded-xl shadow-lg p-8">
+     <form id="booking-form" class="space-y-8"><!-- Step 1: Delivery Type -->
+      <div class="booking-step">
+       <h3 class="text-xl font-semibold text-blue-900 mb-4">1. Choose Delivery Type</h3>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4"><label class="delivery-type-option cursor-pointer"> <input type="radio" name="deliveryType" value="goods" class="hidden">
+         <div class="border-2 border-gray-200 rounded-lg p-6 text-center hover:border-blue-500 transition-colors"><i data-lucide="package" class="w-12 h-12 mx-auto mb-3 text-blue-500"></i>
+          <h4 class="font-semibold text-gray-900">Goods</h4>
+          <p class="text-sm text-gray-600">Ship packages &amp; items</p>
+         </div></label> <label class="delivery-type-option cursor-pointer"> <input type="radio" name="deliveryType" value="person" class="hidden">
+         <div class="border-2 border-gray-200 rounded-lg p-6 text-center hover:border-blue-500 transition-colors"><i data-lucide="user" class="w-12 h-12 mx-auto mb-3 text-purple-500"></i>
+          <h4 class="font-semibold text-gray-900">Person</h4>
+          <p class="text-sm text-gray-600">Personal transport</p>
+         </div></label> <label class="delivery-type-option cursor-pointer"> <input type="radio" name="deliveryType" value="gift" class="hidden">
+         <div class="border-2 border-gray-200 rounded-lg p-6 text-center hover:border-blue-500 transition-colors"><i data-lucide="gift" class="w-12 h-12 mx-auto mb-3 text-pink-500"></i>
+          <h4 class="font-semibold text-gray-900">Gift</h4>
+          <p class="text-sm text-gray-600">Special deliveries</p>
+         </div></label>
+       </div>
+      </div><!-- Step 2: Service Class -->
+      <div class="booking-step">
+       <h3 class="text-xl font-semibold text-blue-900 mb-4">2. Select Service Class</h3>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4"><label class="service-class-option cursor-pointer"> <input type="radio" name="serviceClass" value="economy" class="hidden">
+         <div class="border-2 border-gray-200 rounded-lg p-6 hover:border-blue-500 transition-colors">
+          <div class="flex items-center justify-between mb-3">
+           <h4 class="font-semibold text-gray-900">Economy</h4><span class="text-sm text-green-600 font-medium">KSh 5/km</span>
+          </div>
+          <p class="text-sm text-gray-600">Standard delivery service</p>
+          <ul class="text-xs text-gray-500 mt-2 space-y-1">
+           <li>• 2-4 hours delivery</li>
+           <li>• Basic tracking</li>
+           <li>• Standard support</li>
+          </ul>
+         </div></label> <label class="service-class-option cursor-pointer"> <input type="radio" name="serviceClass" value="executive" class="hidden">
+         <div class="border-2 border-gray-200 rounded-lg p-6 hover:border-blue-500 transition-colors">
+          <div class="flex items-center justify-between mb-3">
+           <h4 class="font-semibold text-gray-900">Executive</h4><span class="text-sm text-blue-600 font-medium">KSh 10/km</span>
+          </div>
+          <p class="text-sm text-gray-600">Premium delivery service</p>
+          <ul class="text-xs text-gray-500 mt-2 space-y-1">
+           <li>• 1-2 hours delivery</li>
+           <li>• Real-time tracking</li>
+           <li>• Priority support</li>
+          </ul>
+         </div></label> <label class="service-class-option cursor-pointer"> <input type="radio" name="serviceClass" value="vvip" class="hidden">
+         <div class="border-2 border-gray-200 rounded-lg p-6 hover:border-blue-500 transition-colors">
+          <div class="flex items-center justify-between mb-3">
+           <h4 class="font-semibold text-gray-900">VVIP</h4><span class="text-sm text-purple-600 font-medium">KSh 20/km</span>
+          </div>
+          <p class="text-sm text-gray-600">Luxury delivery service</p>
+          <ul class="text-xs text-gray-500 mt-2 space-y-1">
+           <li>• Express delivery</li>
+           <li>• Live tracking &amp; chat</li>
+           <li>• VIP support</li>
+          </ul>
+         </div></label>
+       </div>
+      </div><!-- Step 3: Locations -->
+      <div class="booking-step">
+       <h3 class="text-xl font-semibold text-blue-900 mb-4">3. Pickup &amp; Destination</h3>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div><label class="block text-sm font-medium text-gray-700 mb-2">Pickup Location</label>
+         <div class="relative"><i data-lucide="map-pin" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"></i> <input type="text" id="pickup-address" required class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent" placeholder="Enter pickup address">
+         </div>
+        </div>
+        <div><label class="block text-sm font-medium text-gray-700 mb-2">Destination</label>
+         <div class="relative"><i data-lucide="navigation" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"></i> <input type="text" id="destination-address" required class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent" placeholder="Enter destination address">
+         </div>
+        </div>
+       </div>
+      </div><!-- Step 4: Details -->
+      <div class="booking-step">
+       <h3 class="text-xl font-semibold text-blue-900 mb-4">4. Delivery Details</h3>
+       <div class="space-y-4">
+        <div><label class="block text-sm font-medium text-gray-700 mb-2">Special Instructions</label> <textarea id="delivery-notes" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent" placeholder="Any special instructions for the driver..."></textarea>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+         <div><label class="block text-sm font-medium text-gray-700 mb-2">Recipient Name</label> <input type="text" id="recipient-name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent" placeholder="Recipient's name">
+         </div>
+         <div><label class="block text-sm font-medium text-gray-700 mb-2">Recipient Phone</label> <input type="tel" id="recipient-phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent" placeholder="+254712345678">
+         </div>
+        </div>
+        <div class="flex items-center space-x-3"><input type="checkbox" id="is-fragile" class="w-5 h-5 text-blue-900 border-gray-300 rounded focus:ring-blue-900"> <label for="is-fragile" class="text-sm font-medium text-gray-700">This item is fragile</label>
+        </div>
+       </div>
+      </div><!-- Step 5: Payment -->
+      <div class="booking-step">
+       <h3 class="text-xl font-semibold text-blue-900 mb-4">5. Payment Method</h3>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6"><label class="payment-method-option cursor-pointer"> <input type="radio" name="paymentMethod" value="wallet" class="hidden">
+         <div class="border-2 border-gray-200 rounded-lg p-4 text-center hover:border-blue-500 transition-colors"><i data-lucide="wallet" class="w-8 h-8 mx-auto mb-2 text-blue-500"></i>
+          <h4 class="font-semibold text-gray-900">Wallet</h4>
+          <p class="text-xs text-gray-600">Use wallet balance</p>
+         </div></label> <label class="payment-method-option cursor-pointer"> <input type="radio" name="paymentMethod" value="mpesa" class="hidden">
+         <div class="border-2 border-gray-200 rounded-lg p-4 text-center hover:border-blue-500 transition-colors"><i data-lucide="smartphone" class="w-8 h-8 mx-auto mb-2 text-green-500"></i>
+          <h4 class="font-semibold text-gray-900">M-Pesa</h4>
+          <p class="text-xs text-gray-600">Mobile payment</p>
+         </div></label> <label class="payment-method-option cursor-pointer"> <input type="radio" name="paymentMethod" value="card" class="hidden">
+         <div class="border-2 border-gray-200 rounded-lg p-4 text-center hover:border-blue-500 transition-colors"><i data-lucide="credit-card" class="w-8 h-8 mx-auto mb-2 text-purple-500"></i>
+          <h4 class="font-semibold text-gray-900">Card</h4>
+          <p class="text-xs text-gray-600">Credit/Debit card</p>
+         </div></label>
+       </div><!-- Price Summary -->
+       <div class="bg-gray-50 rounded-lg p-6">
+        <h4 class="font-semibold text-gray-900 mb-4">Price Summary</h4>
+        <div class="space-y-2">
+         <div class="flex justify-between text-sm"><span>Distance:</span> <span id="price-distance">0 km</span>
+         </div>
+         <div class="flex justify-between text-sm"><span>Base Price:</span> <span id="price-base">KSh 0</span>
+         </div>
+         <div class="flex justify-between text-sm"><span>Service Charge (15%):</span> <span id="price-service">KSh 0</span>
+         </div>
+         <hr class="my-2">
+         <div class="flex justify-between font-semibold text-lg"><span>Total:</span> <span id="price-total" class="text-blue-900">KSh 0</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- Submit Button -->
+      <div class="flex space-x-4"><button type="button" onclick="showPage('home')" class="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"> Cancel </button> <button type="submit" class="flex-1 gradient-primary text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all"> Book Delivery </button>
+      </div>
+     </form>
+    </div>
+   </div>
+  </div><!-- Tracking Page -->
+  <div id="tracking-page" class="min-h-screen bg-gray-50 py-8 hidden">
+   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-8"><button onclick="showPage('home')" class="flex items-center space-x-2 text-blue-900 hover:text-blue-700 mb-4"> <i data-lucide="arrow-left" class="w-5 h-5"></i> <span>Back to Home</span> </button>
+     <h1 class="text-3xl font-display font-bold text-blue-900 mb-2">Track Delivery</h1>
+     <p class="text-gray-600">Real-time tracking for your delivery</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8"><!-- Delivery Info -->
+     <div class="bg-white rounded-xl shadow-lg p-6">
+      <div class="flex items-center justify-between mb-6">
+       <h3 class="text-xl font-semibold text-blue-900">Delivery Details</h3><span id="tracking-status" class="px-3 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-800">In Transit</span>
+      </div>
+      <div class="space-y-4">
+       <div>
+        <p class="text-sm font-medium text-gray-700">Ticket ID</p>
+        <p id="tracking-ticket" class="text-lg font-bold text-blue-900">EP-12345678</p>
+       </div>
+       <div>
+        <p class="text-sm font-medium text-gray-700">From</p>
+        <p id="tracking-pickup" class="text-gray-900">Westlands, Nairobi</p>
+       </div>
+       <div>
+        <p class="text-sm font-medium text-gray-700">To</p>
+        <p id="tracking-destination" class="text-gray-900">Kilimani, Nairobi</p>
+       </div>
+       <div>
+        <p class="text-sm font-medium text-gray-700">Driver</p>
+        <div class="flex items-center space-x-3 mt-2"><img id="tracking-driver-avatar" src="https://ui-avatars.com/api/?name=Driver&amp;background=003366&amp;color=FFD700" alt="Driver" class="w-10 h-10 rounded-full">
+         <div>
+          <p id="tracking-driver-name" class="font-medium text-gray-900">Mike Driver</p>
+          <p id="tracking-driver-phone" class="text-sm text-gray-600">+254734567890</p>
+         </div>
+        </div>
+       </div>
+      </div><!-- Chat Section -->
+      <div class="mt-6 border-t pt-6">
+       <h4 class="font-semibold text-gray-900 mb-4">Chat with Driver</h4>
+       <div id="chat-messages" class="bg-gray-50 rounded-lg p-4 h-32 overflow-y-auto mb-4">
+        <p class="text-sm text-gray-500 text-center">No messages yet</p>
+       </div>
+       <div class="flex space-x-2"><input type="text" id="chat-input" placeholder="Type a message..." class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent"> <button onclick="sendMessage()" class="px-4 py-2 gradient-primary text-white rounded-lg hover:shadow-lg transition-all"> <i data-lucide="send" class="w-4 h-4"></i> </button>
+       </div>
+      </div>
+     </div><!-- Map & Timeline -->
+     <div class="space-y-6"><!-- Map Placeholder -->
+      <div class="bg-white rounded-xl shadow-lg p-6">
+       <h3 class="text-xl font-semibold text-blue-900 mb-4">Live Location</h3>
+       <div class="bg-gray-100 rounded-lg h-64 flex items-center justify-center">
+        <div class="text-center"><i data-lucide="map" class="w-12 h-12 text-gray-400 mx-auto mb-2"></i>
+         <p class="text-gray-600">Map integration would go here</p>
+         <p class="text-sm text-gray-500">Google Maps API required</p>
+        </div>
+       </div>
+      </div><!-- Timeline -->
+      <div class="bg-white rounded-xl shadow-lg p-6">
+       <h3 class="text-xl font-semibold text-blue-900 mb-4">Delivery Timeline</h3>
+       <div id="tracking-timeline" class="space-y-4"><!-- Timeline items will be populated here -->
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div><!-- Profile Page -->
+  <div id="profile-page" class="min-h-screen bg-gray-50 hidden"><!-- Hero Section -->
+   <div class="profile-hero py-16 mb-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center text-white animate-fadeIn">
+      <div class="relative inline-block mb-6"><img id="profile-hero-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=150&amp;q=80" alt="Profile" class="w-24 h-24 rounded-full border-4 border-white shadow-2xl mx-auto">
+       <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-blue-500 rounded-full border-4 border-white flex items-center justify-center"><i data-lucide="user" class="w-4 h-4 text-white"></i>
+       </div>
+      </div>
+      <h1 id="profile-hero-name" class="text-5xl font-display font-black mb-4">My Profile</h1>
+      <p class="text-xl text-white/90 mb-8">Manage your account and delivery history</p>
+      <div class="flex items-center justify-center space-x-8 text-white/80">
+       <div class="flex items-center space-x-2"><i data-lucide="calendar" class="w-5 h-5"></i> <span class="font-medium" id="profile-hero-member">Member since 2023</span>
+       </div>
+       <div class="flex items-center space-x-2"><i data-lucide="award" class="w-5 h-5"></i> <span class="font-medium" id="profile-hero-deliveries">0 Deliveries</span>
+       </div>
+       <div class="flex items-center space-x-2"><i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i> <span class="font-medium" id="profile-hero-rating">4.9 Rating</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8"><!-- Profile Info -->
+     <div class="lg:col-span-1">
+      <div class="bg-white rounded-xl shadow-lg p-6">
+       <div class="text-center mb-6"><img id="profile-avatar" src="https://ui-avatars.com/api/?name=User&amp;background=003366&amp;color=FFD700" alt="Profile" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-yellow-400">
+        <h3 id="profile-name" class="text-xl font-semibold text-blue-900">User Name</h3>
+        <p id="profile-email" class="text-gray-600">user@example.com</p>
+       </div>
+       <div class="space-y-4">
+        <div class="flex items-center justify-between p-4 bg-yellow-50 rounded-lg">
+         <div class="flex items-center space-x-3"><i data-lucide="wallet" class="w-5 h-5 text-blue-900"></i> <span class="font-medium text-gray-700">Wallet Balance</span>
+         </div><span id="profile-wallet" class="font-bold text-blue-900">KSh 0</span>
+        </div>
+        <div class="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
+         <div class="flex items-center space-x-3"><i data-lucide="award" class="w-5 h-5 text-blue-900"></i> <span class="font-medium text-gray-700">Referral Code</span>
+         </div><span id="profile-referral" class="font-bold text-blue-900">EP12345678</span>
+        </div><button onclick="topUpWallet()" class="w-full gradient-primary text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all"> Top Up Wallet </button>
+       </div>
+      </div>
+     </div><!-- Delivery History -->
+     <div class="lg:col-span-2">
+      <div class="bg-white rounded-xl shadow-lg p-6">
+       <div class="flex items-center justify-between mb-6">
+        <h3 class="text-xl font-semibold text-blue-900">Delivery History</h3><select id="history-filter" class="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent"> <option value="all">All Deliveries</option> <option value="delivered">Completed</option> <option value="in-transit">In Transit</option> <option value="cancelled">Cancelled</option> </select>
+       </div>
+       <div id="delivery-history" class="space-y-4"><!-- Delivery history will be populated here -->
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div><!-- Driver Dashboard -->
+  <div id="driver-page" class="min-h-screen bg-gradient-to-br from-gray-50 to-green-50 hidden"><!-- Hero Section -->
+   <div class="driver-hero py-16 mb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center text-white animate-fadeIn">
+      <div class="relative inline-block mb-6"><img id="driver-hero-avatar" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=150&amp;q=80" alt="Driver" class="w-24 h-24 rounded-full border-4 border-white shadow-2xl mx-auto">
+       <div id="driver-status-indicator" class="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center"><i data-lucide="truck" class="w-4 h-4 text-white"></i>
+       </div>
+      </div>
+      <h1 id="driver-hero-greeting" class="text-5xl font-display font-black mb-4">Driver Dashboard</h1>
+      <p class="text-xl text-white/90 mb-8">Manage deliveries and maximize your earnings</p>
+      <div class="flex items-center justify-center space-x-8 text-white/80 mb-8">
+       <div class="flex items-center space-x-2">
+        <div id="driver-hero-status-dot" class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div><span class="font-medium" id="driver-hero-status">Online &amp; Ready</span>
+       </div>
+       <div class="flex items-center space-x-2"><i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i> <span class="font-medium" id="driver-hero-rating">4.95 Rating</span>
+       </div>
+       <div class="flex items-center space-x-2"><i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i> <span class="font-medium" id="driver-hero-deliveries">156 Deliveries</span>
+       </div>
+      </div><button id="toggle-availability" class="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-2xl flex items-center space-x-3 hover:bg-white/30 transition-all mx-auto"> <i data-lucide="power" class="w-6 h-6"></i> <span class="font-bold text-lg">Go Offline</span> </button>
+     </div>
+    </div>
+   </div>
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8"><!-- Driver Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+     <div class="metric-card animate-slideUp">
+      <div class="flex items-center justify-between mb-4">
+       <div class="w-14 h-14 gradient-success rounded-2xl flex items-center justify-center"><i data-lucide="package" class="text-white w-7 h-7"></i>
+       </div>
+       <div class="text-right">
+        <div class="flex items-center space-x-1 text-green-600"><i data-lucide="trending-up" class="w-4 h-4"></i> <span class="text-sm font-medium">+5</span>
+        </div>
+       </div>
+      </div>
+      <div>
+       <p class="text-gray-600 text-sm font-medium mb-1">Today's Deliveries</p>
+       <p id="driver-today-deliveries" class="text-3xl font-bold text-gray-900">8</p>
+       <p class="text-xs text-gray-500 mt-1">Target: 12</p>
+      </div>
+     </div>
+     <div class="metric-card animate-slideUp" style="animation-delay: 0.1s">
+      <div class="flex items-center justify-between mb-4">
+       <div class="w-14 h-14 gradient-warning rounded-2xl flex items-center justify-center"><i data-lucide="dollar-sign" class="text-white w-7 h-7"></i>
+       </div>
+       <div class="text-right">
+        <div class="flex items-center space-x-1 text-green-600"><i data-lucide="trending-up" class="w-4 h-4"></i> <span class="text-sm font-medium">+18%</span>
+        </div>
+       </div>
+      </div>
+      <div>
+       <p class="text-gray-600 text-sm font-medium mb-1">Today's Earnings</p>
+       <p id="driver-today-earnings" class="text-3xl font-bold text-gray-900">KSh 2,450</p>
+       <p class="text-xs text-gray-500 mt-1">Average: KSh 2,100</p>
+      </div>
+     </div>
+     <div class="metric-card animate-slideUp" style="animation-delay: 0.2s">
+      <div class="flex items-center justify-between mb-4">
+       <div class="w-14 h-14 gradient-fintech rounded-2xl flex items-center justify-center"><i data-lucide="star" class="text-white w-7 h-7"></i>
+       </div>
+       <div class="text-right">
+        <div class="flex items-center space-x-1 text-purple-600"><i data-lucide="star" class="w-4 h-4 fill-current"></i> <span class="text-sm font-medium">4.95</span>
+        </div>
+       </div>
+      </div>
+      <div>
+       <p class="text-gray-600 text-sm font-medium mb-1">Rating</p>
+       <p id="driver-rating" class="text-3xl font-bold text-gray-900">4.95</p>
+       <p class="text-xs text-gray-500 mt-1">156 reviews</p>
+      </div>
+     </div>
+     <div class="metric-card animate-slideUp" style="animation-delay: 0.3s">
+      <div class="flex items-center justify-between mb-4">
+       <div class="w-14 h-14 gradient-primary rounded-2xl flex items-center justify-center"><i data-lucide="clock" class="text-white w-7 h-7"></i>
+       </div>
+       <div class="text-right">
+        <div class="flex items-center space-x-1 text-blue-600"><i data-lucide="activity" class="w-4 h-4"></i> <span class="text-sm font-medium">Live</span>
+        </div>
+       </div>
+      </div>
+      <div>
+       <p class="text-gray-600 text-sm font-medium mb-1">Online Time</p>
+       <p id="driver-online-time" class="text-3xl font-bold text-gray-900">6h 45m</p>
+       <p class="text-xs text-gray-500 mt-1">Since 8:00 AM</p>
+      </div>
+     </div>
+    </div><!-- Active Delivery & Earnings -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8"><!-- Active Delivery -->
+     <div class="lg:col-span-2 chart-container animate-slideUp">
+      <div class="flex items-center justify-between mb-6">
+       <h3 class="text-xl font-bold text-gray-900">Active Delivery</h3><span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-semibold">In Progress</span>
+      </div>
+      <div id="active-delivery" class="space-y-6">
+       <div class="flex items-center justify-between p-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl border border-green-200">
+        <div class="flex items-center space-x-4">
+         <div class="w-16 h-16 gradient-success rounded-2xl flex items-center justify-center"><i data-lucide="package" class="w-8 h-8 text-white"></i>
+         </div>
+         <div>
+          <h4 class="text-lg font-bold text-gray-900">EP-ABC123</h4>
+          <p class="text-sm text-gray-600">Westlands → Kilimani</p>
+          <p class="text-xs text-gray-500">Started 25 mins ago</p>
+         </div>
+        </div>
+        <div class="text-right">
+         <p class="text-2xl font-bold text-green-900">KSh 287</p>
+         <p class="text-sm text-gray-600">5.2 km</p>
+        </div>
+       </div><!-- Delivery Actions -->
+       <div class="grid grid-cols-2 gap-4"><button onclick="callCustomer()" class="flex items-center justify-center space-x-2 p-4 bg-blue-50 text-blue-700 rounded-xl hover:bg-blue-100 transition-all"> <i data-lucide="phone" class="w-5 h-5"></i> <span class="font-medium">Call Customer</span> </button> <button onclick="getDirections()" class="flex items-center justify-center space-x-2 p-4 bg-green-50 text-green-700 rounded-xl hover:bg-green-100 transition-all"> <i data-lucide="navigation" class="w-5 h-5"></i> <span class="font-medium">Get Directions</span> </button> <button onclick="takeDeliveryPhoto()" class="flex items-center justify-center space-x-2 p-4 bg-purple-50 text-purple-700 rounded-xl hover:bg-purple-100 transition-all"> <i data-lucide="camera" class="w-5 h-5"></i> <span class="font-medium">Take Photo</span> </button> <button onclick="markDelivered()" class="flex items-center justify-center space-x-2 p-4 bg-orange-50 text-orange-700 rounded-xl hover:bg-orange-100 transition-all"> <i data-lucide="check-circle" class="w-5 h-5"></i> <span class="font-medium">Mark Delivered</span> </button>
+       </div>
+      </div>
+     </div><!-- Earnings Chart -->
+     <div class="chart-container animate-slideUp" style="animation-delay: 0.2s">
+      <h3 class="text-xl font-bold text-gray-900 mb-6">Weekly Earnings</h3>
+      <div class="h-48 flex items-end justify-between space-x-2 mb-6">
+       <div class="flex flex-col items-center space-y-2 flex-1">
+        <div class="w-full bg-gradient-to-t from-green-500 to-green-300 rounded-t-lg" style="height: 60%"></div><span class="text-xs text-gray-500 font-medium">Mon</span> <span class="text-xs text-gray-700 font-bold">2.1K</span>
+       </div>
+       <div class="flex flex-col items-center space-y-2 flex-1">
+        <div class="w-full bg-gradient-to-t from-emerald-500 to-emerald-300 rounded-t-lg" style="height: 80%"></div><span class="text-xs text-gray-500 font-medium">Tue</span> <span class="text-xs text-gray-700 font-bold">2.8K</span>
+       </div>
+       <div class="flex flex-col items-center space-y-2 flex-1">
+        <div class="w-full bg-gradient-to-t from-teal-500 to-teal-300 rounded-t-lg" style="height: 45%"></div><span class="text-xs text-gray-500 font-medium">Wed</span> <span class="text-xs text-gray-700 font-bold">1.9K</span>
+       </div>
+       <div class="flex flex-col items-center space-y-2 flex-1">
+        <div class="w-full bg-gradient-to-t from-cyan-500 to-cyan-300 rounded-t-lg" style="height: 90%"></div><span class="text-xs text-gray-500 font-medium">Thu</span> <span class="text-xs text-gray-700 font-bold">3.2K</span>
+       </div>
+       <div class="flex flex-col items-center space-y-2 flex-1">
+        <div class="w-full bg-gradient-to-t from-blue-500 to-blue-300 rounded-t-lg" style="height: 70%"></div><span class="text-xs text-gray-500 font-medium">Fri</span> <span class="text-xs text-gray-700 font-bold">2.5K</span>
+       </div>
+       <div class="flex flex-col items-center space-y-2 flex-1">
+        <div class="w-full bg-gradient-to-t from-indigo-500 to-indigo-300 rounded-t-lg" style="height: 55%"></div><span class="text-xs text-gray-500 font-medium">Sat</span> <span class="text-xs text-gray-700 font-bold">2.2K</span>
+       </div>
+       <div class="flex flex-col items-center space-y-2 flex-1">
+        <div class="w-full bg-gradient-to-t from-purple-500 to-purple-300 rounded-t-lg" style="height: 65%"></div><span class="text-xs text-gray-500 font-medium">Sun</span> <span class="text-xs text-gray-700 font-bold">2.4K</span>
+       </div>
+      </div><!-- Weekly Summary -->
+      <div class="space-y-4">
+       <div class="flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl">
+        <div>
+         <p class="text-sm font-medium text-gray-700">This Week</p>
+         <p class="text-2xl font-bold text-gray-900">KSh 17.1K</p>
+        </div>
+        <div class="text-green-600"><i data-lucide="trending-up" class="w-6 h-6"></i>
+        </div>
+       </div>
+       <div class="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl">
+        <div>
+         <p class="text-sm font-medium text-gray-700">Average/Day</p>
+         <p class="text-lg font-bold text-gray-900">KSh 2.4K</p>
+        </div>
+        <div class="text-blue-600"><i data-lucide="bar-chart" class="w-6 h-6"></i>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div><!-- Available Deliveries & Recent History -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8"><!-- Available Deliveries -->
+     <div class="chart-container animate-slideUp">
+      <div class="flex items-center justify-between mb-6">
+       <h3 class="text-xl font-bold text-gray-900">Available Deliveries</h3><button class="text-green-600 hover:text-green-800 font-medium text-sm">Refresh →</button>
+      </div>
+      <div id="available-deliveries" class="space-y-4">
+       <div class="border border-gray-200 rounded-xl p-4 hover:bg-gray-50 transition-colors">
+        <div class="flex items-center justify-between mb-3"><span class="font-bold text-blue-900">EP-DEF456</span> <span class="text-lg font-bold text-green-600">KSh 420</span>
+        </div>
+        <div class="text-sm text-gray-600 mb-3">
+         <p class="flex items-center space-x-2"><i data-lucide="map-pin" class="w-4 h-4"></i> <span>Karen → Lavington</span></p>
+         <p class="flex items-center space-x-2 mt-1"><i data-lucide="clock" class="w-4 h-4"></i> <span>8.5 km • Executive</span></p>
+        </div><button onclick="acceptDelivery('EP-DEF456', 420)" class="w-full bg-green-500 text-white py-2 rounded-lg font-semibold hover:bg-green-600 transition-colors"> Accept Delivery </button>
+       </div>
+       <div class="border border-gray-200 rounded-xl p-4 hover:bg-gray-50 transition-colors">
+        <div class="flex items-center justify-between mb-3"><span class="font-bold text-blue-900">EP-GHI789</span> <span class="text-lg font-bold text-green-600">KSh 180</span>
+        </div>
+        <div class="text-sm text-gray-600 mb-3">
+         <p class="flex items-center space-x-2"><i data-lucide="map-pin" class="w-4 h-4"></i> <span>CBD → Eastlands</span></p>
+         <p class="flex items-center space-x-2 mt-1"><i data-lucide="clock" class="w-4 h-4"></i> <span>3.2 km • Economy</span></p>
+        </div><button onclick="acceptDelivery('EP-GHI789', 180)" class="w-full bg-green-500 text-white py-2 rounded-lg font-semibold hover:bg-green-600 transition-colors"> Accept Delivery </button>
+       </div>
+       <div class="border border-gray-200 rounded-xl p-4 hover:bg-gray-50 transition-colors">
+        <div class="flex items-center justify-between mb-3"><span class="font-bold text-blue-900">EP-JKL012</span> <span class="text-lg font-bold text-green-600">KSh 650</span>
+        </div>
+        <div class="text-sm text-gray-600 mb-3">
+         <p class="flex items-center space-x-2"><i data-lucide="map-pin" class="w-4 h-4"></i> <span>Runda → Airport</span></p>
+         <p class="flex items-center space-x-2 mt-1"><i data-lucide="clock" class="w-4 h-4"></i> <span>12.8 km • VVIP</span></p>
+        </div><button onclick="acceptDelivery('EP-JKL012', 650)" class="w-full bg-green-500 text-white py-2 rounded-lg font-semibold hover:bg-green-600 transition-colors"> Accept Delivery </button>
+       </div>
+      </div>
+     </div><!-- Recent Deliveries -->
+     <div class="chart-container animate-slideUp" style="animation-delay: 0.1s">
+      <div class="flex items-center justify-between mb-6">
+       <h3 class="text-xl font-bold text-gray-900">Recent Deliveries</h3><button class="text-green-600 hover:text-green-800 font-medium text-sm">View All →</button>
+      </div>
+      <div id="driver-recent-deliveries" class="space-y-4">
+       <div class="flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200">
+        <div class="flex items-center space-x-3">
+         <div class="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center"><i data-lucide="check" class="w-5 h-5 text-white"></i>
+         </div>
+         <div>
+          <p class="font-bold text-gray-900">EP-XYZ789</p>
+          <p class="text-sm text-gray-600">Completed 2h ago</p>
+          <div class="flex text-yellow-400 text-xs">
+           ★★★★★
+          </div>
+         </div>
+        </div>
+        <div class="text-right">
+         <p class="text-lg font-bold text-green-600">KSh 320</p>
+         <p class="text-xs text-gray-500">6.4 km</p>
+        </div>
+       </div>
+       <div class="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border border-blue-200">
+        <div class="flex items-center space-x-3">
+         <div class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center"><i data-lucide="check" class="w-5 h-5 text-white"></i>
+         </div>
+         <div>
+          <p class="font-bold text-gray-900">EP-UVW456</p>
+          <p class="text-sm text-gray-600">Completed 4h ago</p>
+          <div class="flex text-yellow-400 text-xs">
+           ★★★★★
+          </div>
+         </div>
+        </div>
+        <div class="text-right">
+         <p class="text-lg font-bold text-blue-600">KSh 580</p>
+         <p class="text-xs text-gray-500">9.1 km</p>
+        </div>
+       </div>
+       <div class="flex items-center justify-between p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-200">
+        <div class="flex items-center space-x-3">
+         <div class="w-10 h-10 bg-purple-500 rounded-xl flex items-center justify-center"><i data-lucide="check" class="w-5 h-5 text-white"></i>
+         </div>
+         <div>
+          <p class="font-bold text-gray-900">EP-RST123</p>
+          <p class="text-sm text-gray-600">Completed 6h ago</p>
+          <div class="flex text-yellow-400 text-xs">
+           ★★★★☆
+          </div>
+         </div>
+        </div>
+        <div class="text-right">
+         <p class="text-lg font-bold text-purple-600">KSh 245</p>
+         <p class="text-xs text-gray-500">4.2 km</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div><!-- Admin Dashboard -->
+  <div id="admin-page" class="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 hidden"><!-- Hero Section -->
+   <div class="admin-hero py-16 mb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center text-white animate-fadeIn">
+      <div class="relative inline-block mb-6"><img id="admin-hero-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=150&amp;q=80" alt="Admin" class="w-24 h-24 rounded-full border-4 border-white shadow-2xl mx-auto">
+       <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-purple-500 rounded-full border-4 border-white flex items-center justify-center"><i data-lucide="crown" class="w-4 h-4 text-white"></i>
+       </div>
+      </div>
+      <h1 id="admin-hero-greeting" class="text-5xl font-display font-black mb-4">Admin Control Center</h1>
+      <p class="text-xl text-white/90 mb-8">Manage your delivery platform with real-time insights</p>
+      <div class="flex items-center justify-center space-x-8 text-white/80 mb-8">
+       <div class="flex items-center space-x-2"><i data-lucide="users" class="w-5 h-5"></i> <span class="font-medium" id="admin-hero-users">1,247 Users</span>
+       </div>
+       <div class="flex items-center space-x-2"><i data-lucide="truck" class="w-5 h-5"></i> <span class="font-medium" id="admin-hero-drivers">89 Active Drivers</span>
+       </div>
+       <div class="flex items-center space-x-2"><i data-lucide="trending-up" class="w-5 h-5 text-green-400"></i> <span class="font-medium" id="admin-hero-revenue">KSh 2.4M Revenue</span>
+       </div>
+      </div>
+      <div class="flex items-center justify-center space-x-4"><button onclick="exportPlatformData()" class="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-xl flex items-center space-x-2 hover:bg-white/30 transition-all"> <i data-lucide="download" class="w-5 h-5"></i> <span class="font-medium">Export Data</span> </button> <button onclick="addNewDriver()" class="bg-white text-purple-900 px-6 py-3 rounded-xl flex items-center space-x-2 hover:bg-white/90 transition-all font-bold"> <i data-lucide="plus" class="w-5 h-5"></i> <span class="font-medium">Add Driver</span> </button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8"><!-- Admin Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+     <div class="metric-card animate-slideUp">
+      <div class="flex items-center justify-between mb-4">
+       <div class="w-14 h-14 gradient-primary rounded-2xl flex items-center justify-center"><i data-lucide="users" class="text-white w-7 h-7"></i>
+       </div>
+       <div class="text-right">
+        <div class="flex items-center space-x-1 text-green-600"><i data-lucide="trending-up" class="w-4 h-4"></i> <span class="text-sm font-medium">+23%</span>
+        </div>
+       </div>
+      </div>
+      <div>
+       <p class="text-gray-600 text-sm font-medium mb-1">Total Users</p>
+       <p id="admin-users" class="text-3xl font-bold text-gray-900">1,247</p>
+       <p class="text-xs text-gray-500 mt-1">Active this month</p>
+      </div>
+     </div>
+     <div class="metric-card animate-slideUp" style="animation-delay: 0.1s">
+      <div class="flex items-center justify-between mb-4">
+       <div class="w-14 h-14 gradient-success rounded-2xl flex items-center justify-center"><i data-lucide="truck" class="text-white w-7 h-7"></i>
+       </div>
+       <div class="text-right">
+        <div class="flex items-center space-x-1 text-green-600"><i data-lucide="activity" class="w-4 h-4"></i> <span class="text-sm font-medium">Online</span>
+        </div>
+       </div>
+      </div>
+      <div>
+       <p class="text-gray-600 text-sm font-medium mb-1">Active Drivers</p>
+       <p id="admin-drivers" class="text-3xl font-bold text-gray-900">89</p>
+       <p class="text-xs text-gray-500 mt-1">Out of 156 total</p>
+      </div>
+     </div>
+     <div class="metric-card animate-slideUp" style="animation-delay: 0.2s">
+      <div class="flex items-center justify-between mb-4">
+       <div class="w-14 h-14 gradient-fintech rounded-2xl flex items-center justify-center"><i data-lucide="package" class="text-white w-7 h-7"></i>
+       </div>
+       <div class="text-right">
+        <div class="flex items-center space-x-1 text-purple-600"><i data-lucide="zap" class="w-4 h-4"></i> <span class="text-sm font-medium">Live</span>
+        </div>
+       </div>
+      </div>
+      <div>
+       <p class="text-gray-600 text-sm font-medium mb-1">Total Bookings</p>
+       <p id="admin-bookings" class="text-3xl font-bold text-gray-900">3,456</p>
+       <p class="text-xs text-gray-500 mt-1">This month: 892</p>
+      </div>
+     </div>
+     <div class="metric-card animate-slideUp" style="animation-delay: 0.3s">
+      <div class="flex items-center justify-between mb-4">
+       <div class="w-14 h-14 gradient-warning rounded-2xl flex items-center justify-center"><i data-lucide="dollar-sign" class="text-white w-7 h-7"></i>
+       </div>
+       <div class="text-right">
+        <div class="flex items-center space-x-1 text-green-600"><i data-lucide="trending-up" class="w-4 h-4"></i> <span class="text-sm font-medium">+18%</span>
+        </div>
+       </div>
+      </div>
+      <div>
+       <p class="text-gray-600 text-sm font-medium mb-1">Revenue</p>
+       <p id="admin-revenue" class="text-3xl font-bold text-gray-900">KSh 2.4M</p>
+       <p class="text-xs text-gray-500 mt-1">Monthly target: 85%</p>
+      </div>
+     </div>
+    </div><!-- Charts and Analytics -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8"><!-- Revenue Chart -->
+     <div class="lg:col-span-2 chart-container animate-slideUp">
+      <div class="flex items-center justify-between mb-6">
+       <h3 class="text-xl font-bold text-gray-900">Revenue Analytics</h3>
+       <div class="flex items-center space-x-2"><select class="text-sm border border-gray-200 rounded-lg px-3 py-2"> <option>Last 7 days</option> <option>Last 30 days</option> <option>Last 3 months</option> </select>
+       </div>
+      </div><!-- Revenue Chart -->
+      <div class="h-64 flex items-end justify-between space-x-3 mb-6">
+       <div class="flex flex-col items-center space-y-2 flex-1">
+        <div class="w-full bg-gradient-to-t from-blue-500 to-blue-300 rounded-t-lg" style="height: 45%"></div><span class="text-xs text-gray-500 font-medium">Mon</span> <span class="text-xs text-gray-700 font-bold">KSh 45K</span>
+       </div>
+       <div class="flex flex-col items-center space-y-2 flex-1">
+        <div class="w-full bg-gradient-to-t from-purple-500 to-purple-300 rounded-t-lg" style="height: 70%"></div><span class="text-xs text-gray-500 font-medium">Tue</span> <span class="text-xs text-gray-700 font-bold">KSh 67K</span>
+       </div>
+       <div class="flex flex-col items-center space-y-2 flex-1">
+        <div class="w-full bg-gradient-to-t from-green-500 to-green-300 rounded-t-lg" style="height: 55%"></div><span class="text-xs text-gray-500 font-medium">Wed</span> <span class="text-xs text-gray-700 font-bold">KSh 52K</span>
+       </div>
+       <div class="flex flex-col items-center space-y-2 flex-1">
+        <div class="w-full bg-gradient-to-t from-yellow-500 to-yellow-300 rounded-t-lg" style="height: 85%"></div><span class="text-xs text-gray-500 font-medium">Thu</span> <span class="text-xs text-gray-700 font-bold">KSh 78K</span>
+       </div>
+       <div class="flex flex-col items-center space-y-2 flex-1">
+        <div class="w-full bg-gradient-to-t from-pink-500 to-pink-300 rounded-t-lg" style="height: 90%"></div><span class="text-xs text-gray-500 font-medium">Fri</span> <span class="text-xs text-gray-700 font-bold">KSh 89K</span>
+       </div>
+       <div class="flex flex-col items-center space-y-2 flex-1">
+        <div class="w-full bg-gradient-to-t from-indigo-500 to-indigo-300 rounded-t-lg" style="height: 65%"></div><span class="text-xs text-gray-500 font-medium">Sat</span> <span class="text-xs text-gray-700 font-bold">KSh 61K</span>
+       </div>
+       <div class="flex flex-col items-center space-y-2 flex-1">
+        <div class="w-full bg-gradient-to-t from-red-500 to-red-300 rounded-t-lg" style="height: 75%"></div><span class="text-xs text-gray-500 font-medium">Sun</span> <span class="text-xs text-gray-700 font-bold">KSh 72K</span>
+       </div>
+      </div><!-- Summary Stats -->
+      <div class="grid grid-cols-3 gap-4">
+       <div class="text-center p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl">
+        <p class="text-2xl font-bold text-gray-900">KSh 464K</p>
+        <p class="text-sm text-gray-600">Total Revenue</p>
+       </div>
+       <div class="text-center p-4 bg-gradient-to-r from-green-50 to-teal-50 rounded-xl">
+        <p class="text-2xl font-bold text-gray-900">KSh 66K</p>
+        <p class="text-sm text-gray-600">Daily Average</p>
+       </div>
+       <div class="text-center p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl">
+        <p class="text-2xl font-bold text-gray-900">+18%</p>
+        <p class="text-sm text-gray-600">Growth Rate</p>
+       </div>
+      </div>
+     </div><!-- Performance Metrics -->
+     <div class="chart-container animate-slideUp" style="animation-delay: 0.2s">
+      <h3 class="text-xl font-bold text-gray-900 mb-6">Performance Metrics</h3>
+      <div class="space-y-6"><!-- Delivery Success Rate -->
+       <div>
+        <div class="flex items-center justify-between mb-2"><span class="text-sm font-medium text-gray-700">Delivery Success Rate</span> <span class="text-sm font-bold text-green-600">98.5%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-3">
+         <div class="bg-gradient-to-r from-green-500 to-green-400 h-3 rounded-full" style="width: 98.5%"></div>
+        </div>
+       </div><!-- Customer Satisfaction -->
+       <div>
+        <div class="flex items-center justify-between mb-2"><span class="text-sm font-medium text-gray-700">Customer Satisfaction</span> <span class="text-sm font-bold text-blue-600">4.9/5</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-3">
+         <div class="bg-gradient-to-r from-blue-500 to-blue-400 h-3 rounded-full" style="width: 98%"></div>
+        </div>
+       </div><!-- Driver Efficiency -->
+       <div>
+        <div class="flex items-center justify-between mb-2"><span class="text-sm font-medium text-gray-700">Driver Efficiency</span> <span class="text-sm font-bold text-purple-600">94.2%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-3">
+         <div class="bg-gradient-to-r from-purple-500 to-purple-400 h-3 rounded-full" style="width: 94.2%"></div>
+        </div>
+       </div><!-- Platform Uptime -->
+       <div>
+        <div class="flex items-center justify-between mb-2"><span class="text-sm font-medium text-gray-700">Platform Uptime</span> <span class="text-sm font-bold text-green-600">99.9%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-3">
+         <div class="bg-gradient-to-r from-green-500 to-green-400 h-3 rounded-full" style="width: 99.9%"></div>
+        </div>
+       </div>
+      </div><!-- Quick Actions -->
+      <div class="mt-8 space-y-3"><button onclick="sendPlatformNotification()" class="w-full flex items-center justify-between p-3 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl hover:shadow-md transition-all">
+        <div class="flex items-center space-x-3"><i data-lucide="bell" class="w-5 h-5 text-blue-600"></i> <span class="font-medium text-gray-700">Send Notifications</span>
+        </div><i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i> </button> <button onclick="managePlatformSettings()" class="w-full flex items-center justify-between p-3 bg-gradient-to-r from-green-50 to-teal-50 rounded-xl hover:shadow-md transition-all">
+        <div class="flex items-center space-x-3"><i data-lucide="settings" class="w-5 h-5 text-green-600"></i> <span class="font-medium text-gray-700">Platform Settings</span>
+        </div><i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i> </button>
+      </div>
+     </div>
+    </div><!-- Admin Tables -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8"><!-- Recent Bookings -->
+     <div class="chart-container animate-slideUp">
+      <div class="flex items-center justify-between mb-6">
+       <h3 class="text-xl font-bold text-gray-900">Recent Bookings</h3><button class="text-purple-600 hover:text-purple-800 font-medium text-sm">View All →</button>
+      </div>
+      <div id="admin-recent-bookings" class="space-y-4"><!-- Recent bookings will be populated here -->
+      </div>
+     </div><!-- Driver Management -->
+     <div class="chart-container animate-slideUp" style="animation-delay: 0.1s">
+      <div class="flex items-center justify-between mb-6">
+       <h3 class="text-xl font-bold text-gray-900">Top Drivers</h3><button class="text-purple-600 hover:text-purple-800 font-medium text-sm">Manage All →</button>
+      </div>
+      <div id="admin-drivers-list" class="space-y-4"><!-- Drivers list will be populated here -->
+      </div>
+     </div>
+    </div>
+   </div>
+  </div><!-- Success Modal -->
+  <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+   <div class="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full mx-4 animate-fadeIn">
+    <div class="text-center">
+     <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="check" class="w-8 h-8 text-green-600"></i>
+     </div>
+     <h3 class="text-xl font-semibold text-gray-900 mb-2">Booking Confirmed!</h3>
+     <p class="text-gray-600 mb-4">Your delivery has been booked successfully.</p>
+     <div class="bg-gray-50 rounded-lg p-4 mb-6">
+      <p class="text-sm font-medium text-gray-700">Ticket ID</p>
+      <p id="success-ticket-id" class="text-lg font-bold text-blue-900">EP-12345678</p>
+     </div>
+     <div class="flex space-x-3"><button onclick="closeSuccessModal()" class="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50"> Close </button> <button onclick="trackDelivery()" class="flex-1 gradient-primary text-white py-2 rounded-lg font-semibold"> Track Delivery </button>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
 
+        // Application State
+        let currentUser = null;
+        let currentBookings = [];
+        let currentPage = 'login';
+
+        // Sample Data
+        const sampleUsers = [
+            {
+                id: '1',
+                name: 'John Doe',
+                email: 'john@example.com',
+                phone: '+254712345678',
+                password: 'password123',
+                role: 'user',
+                profilePhoto: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80',
+                wallet: { balance: 1250 },
+                referralCode: 'EP12345678',
+                joinDate: new Date('2023-01-15'),
+                totalSpent: 4500,
+                completedDeliveries: 23,
+                rating: 4.9
+            },
+            {
+                id: '2',
+                name: 'Jane Smith',
+                email: 'jane@example.com',
+                phone: '+254723456789',
+                password: 'password123',
+                role: 'user',
+                profilePhoto: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80',
+                wallet: { balance: 850 },
+                referralCode: 'EP87654321',
+                joinDate: new Date('2023-03-22'),
+                totalSpent: 2300,
+                completedDeliveries: 15,
+                rating: 4.8
+            },
+            {
+                id: '3',
+                name: 'Admin User',
+                email: 'admin@easypick.com',
+                phone: '+254756789012',
+                password: 'admin123',
+                role: 'admin',
+                profilePhoto: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80',
+                wallet: { balance: 5000 },
+                referralCode: 'EPADMIN123',
+                joinDate: new Date('2022-01-01'),
+                totalSpent: 0,
+                completedDeliveries: 0,
+                rating: 5.0
+            },
+            {
+                id: '4',
+                name: 'Mike Driver',
+                email: 'mike@easypick.com',
+                phone: '+254734567890',
+                password: 'driver123',
+                role: 'driver',
+                profilePhoto: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80',
+                wallet: { balance: 2500 },
+                referralCode: 'EPDRIVER01',
+                joinDate: new Date('2022-06-15'),
+                totalEarnings: 45000,
+                completedDeliveries: 156,
+                rating: 4.95,
+                vehicleType: 'Motorcycle',
+                isOnline: true
+            },
+            {
+                id: '5',
+                name: 'Sarah Driver',
+                email: 'sarah@easypick.com',
+                phone: '+254745678901',
+                password: 'driver123',
+                role: 'driver',
+                profilePhoto: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80',
+                wallet: { balance: 3200 },
+                referralCode: 'EPDRIVER02',
+                joinDate: new Date('2022-08-20'),
+                totalEarnings: 52000,
+                completedDeliveries: 189,
+                rating: 4.98,
+                vehicleType: 'Car',
+                isOnline: true
+            },
+            {
+                id: '6',
+                name: 'David Wilson',
+                email: 'david@easypick.com',
+                phone: '+254756789123',
+                password: 'driver123',
+                role: 'driver',
+                profilePhoto: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80',
+                wallet: { balance: 1800 },
+                referralCode: 'EPDRIVER03',
+                joinDate: new Date('2023-02-10'),
+                totalEarnings: 28000,
+                completedDeliveries: 98,
+                rating: 4.87,
+                vehicleType: 'Van',
+                isOnline: false
+            }
+        ];
+
+        const sampleBookings = [
+            {
+                id: '1',
+                ticketId: 'EP-ABC123',
+                userId: '1',
+                deliveryType: 'goods',
+                serviceClass: 'economy',
+                pickup: { address: 'Westlands, Nairobi' },
+                destination: { address: 'Kilimani, Nairobi' },
+                pricing: { totalPrice: 287, distance: 5.2 },
+                status: 'in-transit',
+                createdAt: new Date(Date.now() - 3600000),
+                driver: { name: 'Mike Driver', phone: '+254734567890' },
+                timeline: [
+                    { status: 'requested', timestamp: new Date(Date.now() - 3600000) },
+                    { status: 'accepted', timestamp: new Date(Date.now() - 3000000) },
+                    { status: 'in-transit', timestamp: new Date(Date.now() - 1800000) }
+                ]
+            },
+            {
+                id: '2',
+                ticketId: 'EP-DEF456',
+                userId: '1',
+                deliveryType: 'gift',
+                serviceClass: 'executive',
+                pickup: { address: 'Karen, Nairobi' },
+                destination: { address: 'Lavington, Nairobi' },
+                pricing: { totalPrice: 517, distance: 8.5 },
+                status: 'delivered',
+                createdAt: new Date(Date.now() - 7200000),
+                driver: { name: 'Sarah Driver', phone: '+254745678901' },
+                timeline: [
+                    { status: 'requested', timestamp: new Date(Date.now() - 7200000) },
+                    { status: 'accepted', timestamp: new Date(Date.now() - 6600000) },
+                    { status: 'in-transit', timestamp: new Date(Date.now() - 5400000) },
+                    { status: 'delivered', timestamp: new Date(Date.now() - 3600000) }
+                ],
+                rating: { score: 5, comment: 'Excellent service!' }
+            }
+        ];
+
+        // Utility Functions
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.className = `px-6 py-4 rounded-lg shadow-lg text-white animate-fadeIn ${
+                type === 'success' ? 'bg-green-600' : 
+                type === 'error' ? 'bg-red-600' : 
+                'bg-blue-600'
+            }`;
+            toast.innerHTML = `
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="${type === 'success' ? 'check-circle' : type === 'error' ? 'x-circle' : 'info'}" class="w-5 h-5"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            document.getElementById('toast-container').appendChild(toast);
+            lucide.createIcons();
+            
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+
+        function getGreeting() {
+            const hour = new Date().getHours();
+            if (hour < 12) return 'Good Morning';
+            if (hour < 18) return 'Good Afternoon';
+            return 'Good Evening';
+        }
+
+        function getStatusColor(status) {
+            const colors = {
+                requested: 'bg-yellow-100 text-yellow-800',
+                accepted: 'bg-blue-100 text-blue-800',
+                'in-transit': 'bg-purple-100 text-purple-800',
+                delivered: 'bg-green-100 text-green-800',
+                cancelled: 'bg-red-100 text-red-800'
+            };
+            return colors[status] || 'bg-gray-100 text-gray-800';
+        }
+
+        function formatDate(date) {
+            return new Date(date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+
+        // Page Navigation
+        function showPage(pageName) {
+            // Hide all pages
+            const pages = ['login', 'register', 'home', 'booking', 'tracking', 'profile', 'admin', 'driver'];
+            pages.forEach(page => {
+                document.getElementById(`${page}-page`).classList.add('hidden');
+            });
+
+            // Show selected page
+            document.getElementById(`${pageName}-page`).classList.remove('hidden');
+            currentPage = pageName;
+
+            // Show/hide navbar
+            const navbar = document.getElementById('navbar');
+            if (['login', 'register'].includes(pageName)) {
+                navbar.classList.add('hidden');
+            } else {
+                navbar.classList.remove('hidden');
+                updateNavigation();
+            }
+
+            // Update page content
+            if (pageName === 'home') {
+                updateHomePage();
+            } else if (pageName === 'profile') {
+                updateProfilePage();
+            } else if (pageName === 'admin') {
+                updateAdminPage();
+            } else if (pageName === 'driver') {
+                updateDriverPage();
+            }
+
+            // Close mobile menu
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+
+        function showBookingPage(type = null) {
+            showPage('booking');
+            if (type) {
+                const typeRadio = document.querySelector(`input[name="deliveryType"][value="${type}"]`);
+                if (typeRadio) {
+                    typeRadio.checked = true;
+                    updateDeliveryTypeSelection();
+                }
+            }
+        }
+
+        function updateNavigation() {
+            // Update active nav links
+            const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('bg-gray-900', 'text-white');
+                link.classList.add('text-gray-600', 'hover:bg-gray-50', 'hover:text-gray-900');
+            });
+
+            // Highlight current page
+            const currentLinks = document.querySelectorAll(`[onclick="showPage('${currentPage}')"]`);
+            currentLinks.forEach(link => {
+                if (link.classList.contains('nav-link') || link.classList.contains('mobile-nav-link')) {
+                    link.classList.remove('text-gray-600', 'hover:bg-gray-50', 'hover:text-gray-900');
+                    link.classList.add('bg-gray-900', 'text-white');
+                }
+            });
+
+            // Show/hide role-based navigation
+            if (currentUser && currentUser.role === 'admin') {
+                document.getElementById('admin-nav').classList.remove('hidden');
+                document.getElementById('mobile-admin-nav').classList.remove('hidden');
+                document.getElementById('driver-nav').classList.add('hidden');
+                document.getElementById('mobile-driver-nav').classList.add('hidden');
+            } else if (currentUser && currentUser.role === 'driver') {
+                document.getElementById('driver-nav').classList.remove('hidden');
+                document.getElementById('mobile-driver-nav').classList.remove('hidden');
+                document.getElementById('admin-nav').classList.add('hidden');
+                document.getElementById('mobile-admin-nav').classList.add('hidden');
+            } else {
+                document.getElementById('admin-nav').classList.add('hidden');
+                document.getElementById('mobile-admin-nav').classList.add('hidden');
+                document.getElementById('driver-nav').classList.add('hidden');
+                document.getElementById('mobile-driver-nav').classList.add('hidden');
+            }
+
+            // Update wallet balance
+            if (currentUser) {
+                document.getElementById('wallet-balance').textContent = `KSh ${currentUser.wallet.balance}`;
+                document.getElementById('mobile-wallet-balance').textContent = `KSh ${currentUser.wallet.balance}`;
+                document.getElementById('nav-avatar').src = currentUser.profilePhoto;
+                document.getElementById('nav-avatar').src = `https://ui-avatars.com/api/?name=${encodeURIComponent(currentUser.name)}&background=1a1a1a&color=f59e0b`;
+            }
+        }
+
+        // Authentication
+        function login(email, password) {
+            const user = sampleUsers.find(u => u.email === email && u.password === password);
+            if (user) {
+                currentUser = user;
+                currentBookings = sampleBookings.filter(b => b.userId === user.id);
+                showToast(`Welcome back, ${user.name}!`);
+                showPage('home');
+                return true;
+            }
+            return false;
+        }
+
+        function register(userData) {
+            // Check if user already exists
+            const existingUser = sampleUsers.find(u => u.email === userData.email || u.phone === userData.phone);
+            if (existingUser) {
+                showToast('User already exists with this email or phone', 'error');
+                return false;
+            }
+
+            // Create new user
+            const newUser = {
+                id: Date.now().toString(),
+                name: userData.name,
+                email: userData.email,
+                phone: userData.phone,
+                password: userData.password,
+                role: userData.accountType || 'user',
+                profilePhoto: `https://images.unsplash.com/photo-${userData.accountType === 'driver' ? '1560250097-0b93528c311a' : '1507003211169-0a1dd7228f2d'}?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80`,
+                wallet: { balance: 50 }, // Welcome bonus
+                referralCode: 'EP' + Math.random().toString(36).substr(2, 8).toUpperCase(),
+                joinDate: new Date(),
+                totalSpent: 0,
+                completedDeliveries: 0,
+                rating: 5.0
+            };
+
+            // Add driver-specific fields
+            if (userData.accountType === 'driver') {
+                newUser.vehicleType = 'Motorcycle';
+                newUser.isOnline = false;
+                newUser.totalEarnings = 0;
+            }
+
+            sampleUsers.push(newUser);
+            currentUser = newUser;
+            currentBookings = [];
+            
+            const welcomeMessage = userData.accountType === 'driver' 
+                ? `Welcome to EasyPick Driver, ${newUser.name}! Start earning today!`
+                : `Welcome to EasyPick, ${newUser.name}!`;
+            
+            showToast(welcomeMessage);
+            
+            // Redirect based on account type
+            if (userData.accountType === 'driver') {
+                showPage('driver');
+            } else {
+                showPage('home');
+            }
+            
+            return true;
+        }
+
+        function logout() {
+            currentUser = null;
+            currentBookings = [];
+            showToast('Logged out successfully');
+            showPage('login');
+        }
+
+        // Home Page Functions
+        function updateHomePage() {
+            if (!currentUser) return;
+
+            // Update hero section
+            document.getElementById('home-hero-avatar').src = currentUser.profilePhoto;
+            document.getElementById('home-hero-greeting').textContent = `${getGreeting()}, ${currentUser.name.split(' ')[0]}! 👋`;
+            
+            // Update quick stats cards
+            document.getElementById('home-referral').textContent = currentUser.referralCode;
+            document.getElementById('home-wallet').textContent = `KSh ${currentUser.wallet.balance}`;
+
+            // Update stats
+            const totalBookings = currentBookings.length;
+            const activeDeliveries = currentBookings.filter(b => 
+                ['requested', 'accepted', 'in-transit'].includes(b.status)
+            ).length;
+            const completedDeliveries = currentBookings.filter(b => b.status === 'delivered').length;
+            const totalSpent = currentBookings.reduce((sum, booking) => sum + booking.pricing.totalPrice, 0);
+
+            document.getElementById('stats-total').textContent = totalBookings;
+            document.getElementById('stats-active').textContent = activeDeliveries;
+            document.getElementById('stats-completed').textContent = completedDeliveries;
+            document.getElementById('stats-spent').textContent = `KSh ${totalSpent}`;
+
+            // Update recent bookings
+            updateRecentBookings();
+            
+            // Show notifications for new features
+            showNewFeatureNotifications();
+        }
+
+        function showNewFeatureNotifications() {
+            // Show welcome notification for new users
+            if (currentBookings.length === 0) {
+                setTimeout(() => {
+                    showToast('🎉 Welcome! Get KSh 50 off your first delivery with code WELCOME50', 'info');
+                }, 2000);
+            }
+            
+            // Show wallet bonus notification
+            if (currentUser.wallet.balance > 0 && currentBookings.length === 0) {
+                setTimeout(() => {
+                    showToast('💰 You have wallet credit! Use it for instant payments', 'info');
+                }, 4000);
+            }
+        }
+
+        function updateRecentBookings() {
+            const container = document.getElementById('recent-bookings');
+            const recentBookings = currentBookings.slice(0, 3);
+
+            if (recentBookings.length === 0) {
+                container.innerHTML = `
+                    <div class="bg-white rounded-xl shadow-md p-12 text-center">
+                        <i data-lucide="package" class="w-12 h-12 mx-auto text-gray-400 mb-4"></i>
+                        <p class="text-gray-600 text-lg">No bookings yet</p>
+                        <p class="text-gray-500 mt-2">Start your first delivery now!</p>
+                        <button onclick="showPage('booking')" class="mt-6 px-8 py-3 gradient-primary text-white rounded-lg font-semibold hover:shadow-lg transition-all">
+                            Book Now
+                        </button>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = recentBookings.map(booking => `
+                    <div onclick="showTrackingPage('${booking.id}')" class="bg-white rounded-xl shadow-md p-6 cursor-pointer hover:scale-102 transition-transform">
+                        <div class="flex items-center justify-between flex-wrap gap-4">
+                            <div class="flex-1">
+                                <div class="flex items-center space-x-3 mb-2">
+                                    <span class="text-lg font-bold text-blue-900">${booking.ticketId}</span>
+                                    <span class="px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(booking.status)}">
+                                        ${booking.status.replace('-', ' ').toUpperCase()}
+                                    </span>
+                                </div>
+                                <div class="flex items-start space-x-2 text-gray-600 text-sm">
+                                    <i data-lucide="map-pin" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>
+                                    <div>
+                                        <p class="font-medium">${booking.pickup.address}</p>
+                                        <p class="text-gray-500">→ ${booking.destination.address}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-2xl font-bold text-blue-900">KSh ${booking.pricing.totalPrice}</p>
+                                <div class="flex items-center justify-end space-x-1 text-gray-500 text-sm mt-1">
+                                    <i data-lucide="clock" class="w-3 h-3"></i>
+                                    <span>${formatDate(booking.createdAt)}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+            lucide.createIcons();
+        }
+
+        // Booking Page Functions
+        function updateDeliveryTypeSelection() {
+            const options = document.querySelectorAll('.delivery-type-option');
+            options.forEach(option => {
+                const input = option.querySelector('input');
+                const div = option.querySelector('div');
+                if (input.checked) {
+                    div.classList.remove('border-gray-200');
+                    div.classList.add('border-blue-500', 'bg-blue-50');
+                } else {
+                    div.classList.remove('border-blue-500', 'bg-blue-50');
+                    div.classList.add('border-gray-200');
+                }
+            });
+            calculatePrice();
+        }
+
+        function updateServiceClassSelection() {
+            const options = document.querySelectorAll('.service-class-option');
+            options.forEach(option => {
+                const input = option.querySelector('input');
+                const div = option.querySelector('div');
+                if (input.checked) {
+                    div.classList.remove('border-gray-200');
+                    div.classList.add('border-blue-500', 'bg-blue-50');
+                } else {
+                    div.classList.remove('border-blue-500', 'bg-blue-50');
+                    div.classList.add('border-gray-200');
+                }
+            });
+            calculatePrice();
+        }
+
+        function updatePaymentMethodSelection() {
+            const options = document.querySelectorAll('.payment-method-option');
+            options.forEach(option => {
+                const input = option.querySelector('input');
+                const div = option.querySelector('div');
+                if (input.checked) {
+                    div.classList.remove('border-gray-200');
+                    div.classList.add('border-blue-500', 'bg-blue-50');
+                } else {
+                    div.classList.remove('border-blue-500', 'bg-blue-50');
+                    div.classList.add('border-gray-200');
+                }
+            });
+        }
+
+        function calculatePrice() {
+            const serviceClass = document.querySelector('input[name="serviceClass"]:checked')?.value;
+            if (!serviceClass) return;
+
+            const basePrices = { economy: 5, executive: 10, vvip: 20 };
+            const distance = Math.random() * 15 + 2; // Random distance between 2-17 km
+            
+            const basePrice = basePrices[serviceClass] * distance;
+            const serviceCharge = basePrice * 0.15;
+            const totalPrice = basePrice + serviceCharge;
+
+            document.getElementById('price-distance').textContent = `${distance.toFixed(1)} km`;
+            document.getElementById('price-base').textContent = `KSh ${Math.round(basePrice)}`;
+            document.getElementById('price-service').textContent = `KSh ${Math.round(serviceCharge)}`;
+            document.getElementById('price-total').textContent = `KSh ${Math.round(totalPrice)}`;
+        }
+
+        function createBooking(formData) {
+            const newBooking = {
+                id: Date.now().toString(),
+                ticketId: 'EP-' + Math.random().toString(36).substr(2, 8).toUpperCase(),
+                userId: currentUser.id,
+                deliveryType: formData.deliveryType,
+                serviceClass: formData.serviceClass,
+                pickup: { address: formData.pickupAddress },
+                destination: { address: formData.destinationAddress },
+                pricing: {
+                    totalPrice: parseInt(document.getElementById('price-total').textContent.replace('KSh ', '')),
+                    distance: parseFloat(document.getElementById('price-distance').textContent.replace(' km', ''))
+                },
+                status: 'requested',
+                createdAt: new Date(),
+                driver: { name: 'Mike Driver', phone: '+254734567890' },
+                timeline: [
+                    { status: 'requested', timestamp: new Date() }
+                ],
+                details: {
+                    notes: formData.notes,
+                    isFragile: formData.isFragile,
+                    recipientName: formData.recipientName,
+                    recipientPhone: formData.recipientPhone
+                }
+            };
+
+            // Deduct from wallet if payment method is wallet
+            if (formData.paymentMethod === 'wallet') {
+                if (currentUser.wallet.balance < newBooking.pricing.totalPrice) {
+                    showToast('Insufficient wallet balance', 'error');
+                    return false;
+                }
+                currentUser.wallet.balance -= newBooking.pricing.totalPrice;
+                updateNavigation();
+            }
+
+            currentBookings.unshift(newBooking);
+            
+            // Show success modal
+            document.getElementById('success-ticket-id').textContent = newBooking.ticketId;
+            document.getElementById('success-modal').classList.remove('hidden');
+            
+            return newBooking;
+        }
+
+        // Tracking Page Functions
+        function showTrackingPage(bookingId) {
+            const booking = currentBookings.find(b => b.id === bookingId);
+            if (!booking) return;
+
+            showPage('tracking');
+            updateTrackingPage(booking);
+        }
+
+        function updateTrackingPage(booking) {
+            document.getElementById('tracking-ticket').textContent = booking.ticketId;
+            document.getElementById('tracking-pickup').textContent = booking.pickup.address;
+            document.getElementById('tracking-destination').textContent = booking.destination.address;
+            document.getElementById('tracking-status').textContent = booking.status.replace('-', ' ').toUpperCase();
+            document.getElementById('tracking-status').className = `px-3 py-1 rounded-full text-sm font-semibold ${getStatusColor(booking.status)}`;
+            
+            if (booking.driver) {
+                document.getElementById('tracking-driver-name').textContent = booking.driver.name;
+                document.getElementById('tracking-driver-phone').textContent = booking.driver.phone;
+                document.getElementById('tracking-driver-avatar').src = `https://ui-avatars.com/api/?name=${encodeURIComponent(booking.driver.name)}&background=003366&color=FFD700`;
+            }
+
+            // Update timeline
+            const timeline = document.getElementById('tracking-timeline');
+            timeline.innerHTML = booking.timeline.map((item, index) => `
+                <div class="flex items-center space-x-4">
+                    <div class="w-4 h-4 rounded-full ${index === booking.timeline.length - 1 ? 'bg-blue-600' : 'bg-gray-300'}"></div>
+                    <div class="flex-1">
+                        <p class="font-medium text-gray-900">${item.status.replace('-', ' ').toUpperCase()}</p>
+                        <p class="text-sm text-gray-600">${formatDate(item.timestamp)}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            if (!message) return;
+
+            const messagesContainer = document.getElementById('chat-messages');
+            const messageElement = document.createElement('div');
+            messageElement.className = 'mb-2';
+            messageElement.innerHTML = `
+                <div class="bg-blue-600 text-white px-3 py-2 rounded-lg inline-block max-w-xs ml-auto">
+                    <p class="text-sm">${message}</p>
+                    <p class="text-xs opacity-75 mt-1">${new Date().toLocaleTimeString()}</p>
+                </div>
+            `;
+            messagesContainer.appendChild(messageElement);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            
+            input.value = '';
+
+            // Simulate driver response
+            setTimeout(() => {
+                const responseElement = document.createElement('div');
+                responseElement.className = 'mb-2';
+                responseElement.innerHTML = `
+                    <div class="bg-gray-200 text-gray-900 px-3 py-2 rounded-lg inline-block max-w-xs">
+                        <p class="text-sm">Thanks for the message! I'm on my way.</p>
+                        <p class="text-xs opacity-75 mt-1">${new Date().toLocaleTimeString()}</p>
+                    </div>
+                `;
+                messagesContainer.appendChild(responseElement);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 2000);
+        }
+
+        // Profile Page Functions
+        function updateProfilePage() {
+            if (!currentUser) return;
+
+            // Update hero section
+            document.getElementById('profile-hero-avatar').src = currentUser.profilePhoto;
+            document.getElementById('profile-hero-name').textContent = `${currentUser.name}'s Profile`;
+            document.getElementById('profile-hero-member').textContent = `Member since ${currentUser.joinDate.getFullYear()}`;
+            document.getElementById('profile-hero-deliveries').textContent = `${currentBookings.length} Deliveries`;
+            document.getElementById('profile-hero-rating').textContent = `${currentUser.rating} Rating`;
+
+            // Update profile info
+            document.getElementById('profile-name').textContent = currentUser.name;
+            document.getElementById('profile-email').textContent = currentUser.email;
+            document.getElementById('profile-avatar').src = currentUser.profilePhoto;
+            document.getElementById('profile-wallet').textContent = `KSh ${currentUser.wallet.balance}`;
+            document.getElementById('profile-referral').textContent = currentUser.referralCode;
+
+            updateDeliveryHistory();
+        }
+
+        function updateDeliveryHistory() {
+            const container = document.getElementById('delivery-history');
+            const filter = document.getElementById('history-filter').value;
+            
+            let filteredBookings = currentBookings;
+            if (filter !== 'all') {
+                filteredBookings = currentBookings.filter(b => b.status === filter);
+            }
+
+            if (filteredBookings.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-8">
+                        <i data-lucide="package" class="w-12 h-12 mx-auto text-gray-400 mb-4"></i>
+                        <p class="text-gray-600">No deliveries found</p>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = filteredBookings.map(booking => `
+                    <div onclick="showTrackingPage('${booking.id}')" class="border border-gray-200 rounded-lg p-4 cursor-pointer hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-semibold text-blue-900">${booking.ticketId}</span>
+                            <span class="px-2 py-1 rounded-full text-xs font-semibold ${getStatusColor(booking.status)}">
+                                ${booking.status.replace('-', ' ').toUpperCase()}
+                            </span>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-2">
+                            <p>${booking.pickup.address} → ${booking.destination.address}</p>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-500">${formatDate(booking.createdAt)}</span>
+                            <span class="font-semibold text-blue-900">KSh ${booking.pricing.totalPrice}</span>
+                        </div>
+                        ${booking.rating ? `
+                            <div class="mt-2 flex items-center space-x-2">
+                                <div class="flex text-yellow-400">
+                                    ${'★'.repeat(booking.rating.score)}${'☆'.repeat(5 - booking.rating.score)}
+                                </div>
+                                <span class="text-xs text-gray-600">${booking.rating.comment}</span>
+                            </div>
+                        ` : ''}
+                    </div>
+                `).join('');
+            }
+            lucide.createIcons();
+        }
+
+        function topUpWallet() {
+            const amount = prompt('Enter amount to top up (KSh):');
+            if (amount && !isNaN(amount) && parseFloat(amount) > 0) {
+                currentUser.wallet.balance += parseFloat(amount);
+                updateNavigation();
+                updateProfilePage();
+                showToast(`Wallet topped up with KSh ${amount}`);
+            }
+        }
+
+        // Driver Page Functions
+        function updateDriverPage() {
+            if (!currentUser || currentUser.role !== 'driver') return;
+
+            // Update driver stats with realistic data
+            const todayDeliveries = Math.floor(Math.random() * 5) + 6; // 6-10 deliveries
+            const todayEarnings = todayDeliveries * (Math.random() * 200 + 200); // KSh 200-400 per delivery
+            
+            document.getElementById('driver-today-deliveries').textContent = todayDeliveries;
+            document.getElementById('driver-today-earnings').textContent = `KSh ${Math.round(todayEarnings).toLocaleString()}`;
+            document.getElementById('driver-rating').textContent = currentUser.rating || '4.95';
+            
+            // Update online time
+            const onlineHours = Math.floor(Math.random() * 4) + 5; // 5-8 hours
+            const onlineMinutes = Math.floor(Math.random() * 60);
+            document.getElementById('driver-online-time').textContent = `${onlineHours}h ${onlineMinutes}m`;
+
+            // Update hero section
+            document.getElementById('driver-hero-avatar').src = currentUser.profilePhoto;
+            document.getElementById('driver-hero-greeting').textContent = `${getGreeting()}, ${currentUser.name.split(' ')[0]}! 🚛`;
+            document.getElementById('driver-hero-rating').textContent = `${currentUser.rating} Rating`;
+            document.getElementById('driver-hero-deliveries').textContent = `${currentUser.completedDeliveries} Deliveries`;
+
+            // Update availability toggle and status indicators
+            updateDriverStatus();
+            
+            lucide.createIcons();
+        }
+
+        function updateDriverStatus() {
+            const toggleBtn = document.getElementById('toggle-availability');
+            const statusDot = document.getElementById('driver-hero-status-dot');
+            const statusText = document.getElementById('driver-hero-status');
+            const statusIndicator = document.getElementById('driver-status-indicator');
+
+            if (currentUser.isOnline) {
+                toggleBtn.innerHTML = '<i data-lucide="power" class="w-6 h-6"></i><span class="font-bold text-lg">Go Offline</span>';
+                toggleBtn.className = 'bg-red-500/20 backdrop-blur-sm text-white px-8 py-4 rounded-2xl flex items-center space-x-3 hover:bg-red-500/30 transition-all mx-auto';
+                
+                statusDot.className = 'w-3 h-3 bg-green-400 rounded-full animate-pulse';
+                statusText.textContent = 'Online & Ready';
+                statusIndicator.className = 'absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center';
+            } else {
+                toggleBtn.innerHTML = '<i data-lucide="power" class="w-6 h-6"></i><span class="font-bold text-lg">Go Online</span>';
+                toggleBtn.className = 'bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-2xl flex items-center space-x-3 hover:bg-white/30 transition-all mx-auto';
+                
+                statusDot.className = 'w-3 h-3 bg-gray-400 rounded-full';
+                statusText.textContent = 'Offline';
+                statusIndicator.className = 'absolute -bottom-2 -right-2 w-8 h-8 bg-gray-500 rounded-full border-4 border-white flex items-center justify-center';
+            }
+            
+            lucide.createIcons();
+        }
+
+        function toggleDriverAvailability() {
+            if (!currentUser || currentUser.role !== 'driver') return;
+            
+            currentUser.isOnline = !currentUser.isOnline;
+            const status = currentUser.isOnline ? 'online' : 'offline';
+            showToast(`You are now ${status}`, currentUser.isOnline ? 'success' : 'info');
+            updateDriverStatus();
+        }
+
+        // Driver Action Functions
+        function callCustomer() {
+            showToast('📞 Calling customer...', 'info');
+            // Simulate call functionality
+            setTimeout(() => {
+                showToast('Call connected! Customer notified of your arrival.', 'success');
+            }, 2000);
+        }
+
+        function getDirections() {
+            showToast('🗺️ Opening navigation...', 'info');
+            // Simulate opening maps
+            setTimeout(() => {
+                showToast('GPS navigation started to destination.', 'success');
+            }, 1500);
+        }
+
+        function takeDeliveryPhoto() {
+            showToast('📸 Camera opened...', 'info');
+            // Simulate photo capture
+            setTimeout(() => {
+                showToast('Photo captured and uploaded successfully!', 'success');
+            }, 2000);
+        }
+
+        function markDelivered() {
+            const confirmation = confirm('Mark this delivery as completed?');
+            if (confirmation) {
+                showToast('✅ Delivery marked as completed!', 'success');
+                // Update earnings
+                const currentEarnings = parseInt(document.getElementById('driver-today-earnings').textContent.replace(/[^\d]/g, ''));
+                const newEarnings = currentEarnings + 287;
+                document.getElementById('driver-today-earnings').textContent = `KSh ${newEarnings.toLocaleString()}`;
+                
+                // Update delivery count
+                const currentDeliveries = parseInt(document.getElementById('driver-today-deliveries').textContent);
+                document.getElementById('driver-today-deliveries').textContent = currentDeliveries + 1;
+                
+                // Hide active delivery section after completion
+                setTimeout(() => {
+                    document.getElementById('active-delivery').innerHTML = `
+                        <div class="text-center py-8">
+                            <i data-lucide="check-circle" class="w-16 h-16 mx-auto text-green-500 mb-4"></i>
+                            <h4 class="text-xl font-bold text-gray-900 mb-2">No Active Deliveries</h4>
+                            <p class="text-gray-600">Accept a new delivery to start earning!</p>
+                        </div>
+                    `;
+                    lucide.createIcons();
+                }, 3000);
+            }
+        }
+
+        function acceptDelivery(ticketId, amount) {
+            if (!currentUser.isOnline) {
+                showToast('Please go online first to accept deliveries', 'error');
+                return;
+            }
+            
+            showToast(`🚛 Delivery ${ticketId} accepted!`, 'success');
+            
+            // Update active delivery section
+            document.getElementById('active-delivery').innerHTML = `
+                <div class="flex items-center justify-between p-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl border border-green-200">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-16 h-16 gradient-success rounded-2xl flex items-center justify-center">
+                            <i data-lucide="package" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900">${ticketId}</h4>
+                            <p class="text-sm text-gray-600">Pickup in progress...</p>
+                            <p class="text-xs text-gray-500">Just accepted</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-2xl font-bold text-green-900">KSh ${amount}</p>
+                        <p class="text-sm text-gray-600">New delivery</p>
+                    </div>
+                </div>
+
+                <!-- Delivery Actions -->
+                <div class="grid grid-cols-2 gap-4 mt-6">
+                    <button onclick="callCustomer()" class="flex items-center justify-center space-x-2 p-4 bg-blue-50 text-blue-700 rounded-xl hover:bg-blue-100 transition-all">
+                        <i data-lucide="phone" class="w-5 h-5"></i>
+                        <span class="font-medium">Call Customer</span>
+                    </button>
+                    <button onclick="getDirections()" class="flex items-center justify-center space-x-2 p-4 bg-green-50 text-green-700 rounded-xl hover:bg-green-100 transition-all">
+                        <i data-lucide="navigation" class="w-5 h-5"></i>
+                        <span class="font-medium">Get Directions</span>
+                    </button>
+                    <button onclick="takeDeliveryPhoto()" class="flex items-center justify-center space-x-2 p-4 bg-purple-50 text-purple-700 rounded-xl hover:bg-purple-100 transition-all">
+                        <i data-lucide="camera" class="w-5 h-5"></i>
+                        <span class="font-medium">Take Photo</span>
+                    </button>
+                    <button onclick="markDelivered()" class="flex items-center justify-center space-x-2 p-4 bg-orange-50 text-orange-700 rounded-xl hover:bg-orange-100 transition-all">
+                        <i data-lucide="check-circle" class="w-5 h-5"></i>
+                        <span class="font-medium">Mark Delivered</span>
+                    </button>
+                </div>
+            `;
+            
+            lucide.createIcons();
+        }
+
+        // Admin Page Functions
+        function updateAdminPage() {
+            if (!currentUser || currentUser.role !== 'admin') return;
+
+            // Update admin stats with enhanced data
+            const users = sampleUsers.filter(u => u.role === 'user');
+            const drivers = sampleUsers.filter(u => u.role === 'driver');
+            const activeDrivers = drivers.filter(d => d.isOnline);
+            
+            document.getElementById('admin-users').textContent = users.length.toLocaleString();
+            document.getElementById('admin-drivers').textContent = activeDrivers.length;
+            document.getElementById('admin-bookings').textContent = sampleBookings.length.toLocaleString();
+            
+            const totalRevenue = sampleBookings.reduce((sum, booking) => sum + booking.pricing.totalPrice, 0);
+            document.getElementById('admin-revenue').textContent = `KSh ${(totalRevenue / 1000).toFixed(1)}K`;
+
+            // Update hero section
+            document.getElementById('admin-hero-avatar').src = currentUser.profilePhoto;
+            document.getElementById('admin-hero-greeting').textContent = `${getGreeting()}, Admin! 👑`;
+            document.getElementById('admin-hero-users').textContent = `${users.length} Users`;
+            document.getElementById('admin-hero-drivers').textContent = `${activeDrivers.length} Active Drivers`;
+            document.getElementById('admin-hero-revenue').textContent = `KSh ${(totalRevenue / 1000).toFixed(1)}M Revenue`;
+
+            // Update recent bookings with enhanced styling
+            const recentBookingsContainer = document.getElementById('admin-recent-bookings');
+            recentBookingsContainer.innerHTML = sampleBookings.slice(0, 5).map(booking => `
+                <div class="flex items-center justify-between p-4 bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl border border-gray-100 hover:shadow-md transition-all cursor-pointer" onclick="viewBookingDetails('${booking.id}')">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center">
+                            <i data-lucide="package" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-900">${booking.ticketId}</p>
+                            <p class="text-sm text-gray-600">${booking.pickup.address}</p>
+                            <p class="text-xs text-gray-500">${formatDate(booking.createdAt)}</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold ${getStatusColor(booking.status)}">
+                            ${booking.status.replace('-', ' ').toUpperCase()}
+                        </span>
+                        <p class="text-lg font-bold text-gray-900 mt-1">KSh ${booking.pricing.totalPrice}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            // Update drivers list with enhanced data and styling
+            const driversContainer = document.getElementById('admin-drivers-list');
+            const topDrivers = drivers.sort((a, b) => b.rating - a.rating).slice(0, 5);
+            driversContainer.innerHTML = topDrivers.map(driver => `
+                <div class="flex items-center justify-between p-4 bg-gradient-to-r from-gray-50 to-purple-50 rounded-xl border border-gray-100 hover:shadow-md transition-all cursor-pointer" onclick="manageDriver('${driver.id}')">
+                    <div class="flex items-center space-x-4">
+                        <div class="relative">
+                            <img src="${driver.profilePhoto}" alt="${driver.name}" class="w-12 h-12 rounded-xl border-2 border-white shadow-md">
+                            <div class="absolute -bottom-1 -right-1 w-4 h-4 ${driver.isOnline ? 'bg-green-500' : 'bg-gray-400'} rounded-full border-2 border-white"></div>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-900">${driver.name}</p>
+                            <p class="text-sm text-gray-600">${driver.vehicleType}</p>
+                            <div class="flex items-center space-x-2 mt-1">
+                                <div class="flex text-yellow-400">
+                                    ${'★'.repeat(Math.floor(driver.rating))}
+                                </div>
+                                <span class="text-xs font-medium text-gray-600">${driver.rating}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold ${driver.isOnline ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-600'}">
+                            ${driver.isOnline ? 'ONLINE' : 'OFFLINE'}
+                        </span>
+                        <p class="text-sm font-medium text-gray-600 mt-1">${driver.completedDeliveries} deliveries</p>
+                    </div>
+                </div>
+            `).join('');
+            
+            lucide.createIcons();
+        }
+
+        // Admin Action Functions
+        function exportPlatformData() {
+            showToast('📊 Preparing data export...', 'info');
+            
+            // Simulate data export
+            setTimeout(() => {
+                const data = {
+                    users: sampleUsers.length,
+                    bookings: sampleBookings.length,
+                    revenue: sampleBookings.reduce((sum, booking) => sum + booking.pricing.totalPrice, 0),
+                    exportDate: new Date().toISOString()
+                };
+                
+                const dataStr = JSON.stringify(data, null, 2);
+                const dataBlob = new Blob([dataStr], {type: 'application/json'});
+                const url = URL.createObjectURL(dataBlob);
+                
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `easypick-data-${new Date().toISOString().split('T')[0]}.json`;
+                link.click();
+                
+                showToast('✅ Platform data exported successfully!', 'success');
+            }, 2000);
+        }
+
+        function addNewDriver() {
+            const driverName = prompt('Enter new driver name:');
+            if (!driverName) return;
+            
+            const driverEmail = prompt('Enter driver email:');
+            if (!driverEmail) return;
+            
+            const driverPhone = prompt('Enter driver phone:');
+            if (!driverPhone) return;
+            
+            // Create new driver
+            const newDriver = {
+                id: Date.now().toString(),
+                name: driverName,
+                email: driverEmail,
+                phone: driverPhone,
+                password: 'driver123',
+                role: 'driver',
+                profilePhoto: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80',
+                wallet: { balance: 0 },
+                referralCode: 'EP' + Math.random().toString(36).substr(2, 8).toUpperCase(),
+                joinDate: new Date(),
+                vehicleType: 'Motorcycle',
+                isOnline: false,
+                totalEarnings: 0,
+                completedDeliveries: 0,
+                rating: 5.0
+            };
+            
+            sampleUsers.push(newDriver);
+            showToast(`✅ Driver ${driverName} added successfully!`, 'success');
+            updateAdminPage();
+        }
+
+        function viewBookingDetails(bookingId) {
+            const booking = sampleBookings.find(b => b.id === bookingId);
+            if (!booking) return;
+            
+            showToast(`📦 Viewing details for ${booking.ticketId}`, 'info');
+            
+            // Create a detailed view modal (simplified for demo)
+            const details = `
+                Booking: ${booking.ticketId}
+                Status: ${booking.status.toUpperCase()}
+                From: ${booking.pickup.address}
+                To: ${booking.destination.address}
+                Amount: KSh ${booking.pricing.totalPrice}
+                Distance: ${booking.pricing.distance} km
+                Created: ${formatDate(booking.createdAt)}
+            `;
+            
+            setTimeout(() => {
+                alert(details);
+            }, 500);
+        }
+
+        function manageDriver(driverId) {
+            const driver = sampleUsers.find(u => u.id === driverId);
+            if (!driver) return;
+            
+            const action = prompt(`Manage ${driver.name}:\n1. Toggle Online Status\n2. View Details\n3. Suspend Driver\n\nEnter option (1-3):`);
+            
+            switch(action) {
+                case '1':
+                    driver.isOnline = !driver.isOnline;
+                    showToast(`${driver.name} is now ${driver.isOnline ? 'online' : 'offline'}`, 'success');
+                    updateAdminPage();
+                    break;
+                case '2':
+                    const details = `
+                        Name: ${driver.name}
+                        Email: ${driver.email}
+                        Phone: ${driver.phone}
+                        Vehicle: ${driver.vehicleType}
+                        Rating: ${driver.rating}/5
+                        Deliveries: ${driver.completedDeliveries}
+                        Earnings: KSh ${driver.totalEarnings || 0}
+                        Status: ${driver.isOnline ? 'Online' : 'Offline'}
+                        Joined: ${formatDate(driver.joinDate)}
+                    `;
+                    alert(details);
+                    break;
+                case '3':
+                    const confirm = window.confirm(`Suspend ${driver.name}? This will disable their account.`);
+                    if (confirm) {
+                        driver.isOnline = false;
+                        driver.suspended = true;
+                        showToast(`${driver.name} has been suspended`, 'info');
+                        updateAdminPage();
+                    }
+                    break;
+                default:
+                    showToast('Invalid option selected', 'error');
+            }
+        }
+
+        function sendPlatformNotification() {
+            const message = prompt('Enter notification message to send to all users:');
+            if (!message) return;
+            
+            showToast('📢 Sending notification to all users...', 'info');
+            
+            setTimeout(() => {
+                showToast(`✅ Notification sent to ${sampleUsers.length} users!`, 'success');
+            }, 2000);
+        }
+
+        function managePlatformSettings() {
+            const setting = prompt(`Platform Settings:\n1. Update Service Rates\n2. Maintenance Mode\n3. Driver Requirements\n4. Platform Policies\n\nEnter option (1-4):`);
+            
+            switch(setting) {
+                case '1':
+                    showToast('💰 Service rates updated successfully!', 'success');
+                    break;
+                case '2':
+                    showToast('🔧 Maintenance mode toggled!', 'info');
+                    break;
+                case '3':
+                    showToast('📋 Driver requirements updated!', 'success');
+                    break;
+                case '4':
+                    showToast('📜 Platform policies updated!', 'success');
+                    break;
+                default:
+                    showToast('Invalid option selected', 'error');
+            }
+        }
+
+        // Modal Functions
+        function closeSuccessModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+            showPage('home');
+        }
+
+        function trackDelivery() {
+            const ticketId = document.getElementById('success-ticket-id').textContent;
+            const booking = currentBookings.find(b => b.ticketId === ticketId);
+            if (booking) {
+                closeSuccessModal();
+                showTrackingPage(booking.id);
+            }
+        }
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Login form
+            document.getElementById('login-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = document.getElementById('login-email').value;
+                const password = document.getElementById('login-password').value;
+                
+                if (login(email, password)) {
+                    // Success handled in login function
+                } else {
+                    showToast('Invalid credentials', 'error');
+                }
+            });
+
+            // Register form
+            document.getElementById('register-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const userData = {
+                    name: document.getElementById('register-name').value,
+                    email: document.getElementById('register-email').value,
+                    phone: document.getElementById('register-phone').value,
+                    password: document.getElementById('register-password').value,
+                    referralCode: document.getElementById('register-referral').value,
+                    accountType: document.querySelector('input[name="accountType"]:checked')?.value || 'user'
+                };
+                
+                register(userData);
+            });
+
+            // Account type selection
+            document.querySelectorAll('input[name="accountType"]').forEach(input => {
+                input.addEventListener('change', function() {
+                    const options = document.querySelectorAll('.account-type-option');
+                    options.forEach(option => {
+                        const input = option.querySelector('input');
+                        const div = option.querySelector('div');
+                        if (input.checked) {
+                            div.classList.remove('border-gray-200');
+                            div.classList.add('border-emerald-500', 'bg-emerald-50');
+                            div.querySelector('i').classList.remove('text-gray-500');
+                            div.querySelector('i').classList.add('text-emerald-600');
+                        } else {
+                            div.classList.remove('border-emerald-500', 'bg-emerald-50');
+                            div.classList.add('border-gray-200');
+                            div.querySelector('i').classList.remove('text-emerald-600');
+                            div.querySelector('i').classList.add('text-gray-500');
+                        }
+                    });
+                });
+            });
+
+            // Driver availability toggle
+            document.getElementById('toggle-availability')?.addEventListener('click', toggleDriverAvailability);
+
+            // Booking form
+            document.getElementById('booking-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = {
+                    deliveryType: document.querySelector('input[name="deliveryType"]:checked')?.value,
+                    serviceClass: document.querySelector('input[name="serviceClass"]:checked')?.value,
+                    pickupAddress: document.getElementById('pickup-address').value,
+                    destinationAddress: document.getElementById('destination-address').value,
+                    notes: document.getElementById('delivery-notes').value,
+                    recipientName: document.getElementById('recipient-name').value,
+                    recipientPhone: document.getElementById('recipient-phone').value,
+                    isFragile: document.getElementById('is-fragile').checked,
+                    paymentMethod: document.querySelector('input[name="paymentMethod"]:checked')?.value
+                };
+
+                if (!formData.deliveryType || !formData.serviceClass || !formData.pickupAddress || 
+                    !formData.destinationAddress || !formData.paymentMethod) {
+                    showToast('Please fill in all required fields', 'error');
+                    return;
+                }
+
+                createBooking(formData);
+            });
+
+            // Delivery type selection
+            document.querySelectorAll('input[name="deliveryType"]').forEach(input => {
+                input.addEventListener('change', updateDeliveryTypeSelection);
+            });
+
+            // Service class selection
+            document.querySelectorAll('input[name="serviceClass"]').forEach(input => {
+                input.addEventListener('change', updateServiceClassSelection);
+            });
+
+            // Payment method selection
+            document.querySelectorAll('input[name="paymentMethod"]').forEach(input => {
+                input.addEventListener('change', updatePaymentMethodSelection);
+            });
+
+            // History filter
+            document.getElementById('history-filter').addEventListener('change', updateDeliveryHistory);
+
+            // Chat input enter key
+            document.getElementById('chat-input').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+
+            // Initialize app
+            showPage('login');
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99bb86d2164c8069',t:'MTc2MjY3MjYwNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  </html>
